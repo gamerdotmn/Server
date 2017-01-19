@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.label_model = new System.Windows.Forms.Label();
+            this.label_name = new System.Windows.Forms.Label();
             this.label_processor = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label_user = new System.Windows.Forms.Label();
@@ -77,18 +77,18 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(22, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 13);
+            this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Manufacturer:";
+            this.label1.Text = "Name:";
             // 
-            // label_model
+            // label_name
             // 
-            this.label_model.AutoSize = true;
-            this.label_model.ForeColor = System.Drawing.Color.White;
-            this.label_model.Location = new System.Drawing.Point(112, 20);
-            this.label_model.Name = "label_model";
-            this.label_model.Size = new System.Drawing.Size(0, 13);
-            this.label_model.TabIndex = 1;
+            this.label_name.AutoSize = true;
+            this.label_name.ForeColor = System.Drawing.Color.White;
+            this.label_name.Location = new System.Drawing.Point(70, 20);
+            this.label_name.Name = "label_name";
+            this.label_name.Size = new System.Drawing.Size(0, 13);
+            this.label_name.TabIndex = 1;
             // 
             // label_processor
             // 
@@ -513,7 +513,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label_processor);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label_model);
+            this.Controls.Add(this.label_name);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.Black;
             this.Name = "UserControl_monitor";
@@ -529,7 +529,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
-        public System.Windows.Forms.Label label_model;
+        public System.Windows.Forms.Label label_name;
         public System.Windows.Forms.Label label_processor;
         public System.Windows.Forms.Label label_user;
         public System.Windows.Forms.Label label_dbsize;

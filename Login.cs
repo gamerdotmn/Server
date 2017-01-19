@@ -12,17 +12,20 @@ namespace Server
     public partial class Login : Form
     {
         public bool ok = false;
-
+        private employee aemp;
         public Login()
         {
             InitializeComponent();
-            textBox_user.Text = Serverfrm.cfg.client_user;
+            DataContext_mastercafe dcm = new DataContext_mastercafe(Program.constr);
+            aemp = dcm.employees.Where(e => e.isadmin == true).FirstOrDefault();
+            textBox_user.Text = aemp.name;
             textBox_password.Focus();
         }
 
         private void DoLogin()
         {
-            if (textBox_password.Text == Serverfrm.cfg.client_password)
+            
+            if (textBox_password.Text == aemp.password)
             {
                 ok = true;
                 this.Close();

@@ -18,8 +18,8 @@ namespace Server
             InitializeComponent();
             try
             {
-                label_model.Text = sd.QueryComputerSystem("manufacturer") + ", " + sd.QueryComputerSystem("model");
-                label_processor.Text = sd.QueryEnvironment("%PROCESSOR_IDENTIFIER%");
+                label_name.Text =Serverfrm.cfg.org_name;
+                label_processor.Text = sd.QueryComputerSystem("manufacturer") + ", " + sd.QueryComputerSystem("model")+" "+sd.QueryEnvironment("%PROCESSOR_IDENTIFIER%");
                 label_user.Text = sd.QueryComputerSystem("username");
             }
             catch { ;}

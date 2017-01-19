@@ -78,7 +78,7 @@ namespace Server
     #endregion
 		
 		public DataContext_mastercafe() : 
-				base(global::Server.Properties.Settings.Default.mastercafedbConnectionString, mappingSource)
+				base(global::Server.Properties.Settings.Default.mastercafedbConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -1202,10 +1202,6 @@ namespace Server
 		
 		private string _org_phone;
 		
-		private string _client_password;
-		
-		private string _client_user;
-		
 		private System.Nullable<int> _newmember_price;
 		
 		private System.Nullable<int> _newmember_stock;
@@ -1230,10 +1226,6 @@ namespace Server
     partial void Onorg_nameChanged();
     partial void Onorg_phoneChanging(string value);
     partial void Onorg_phoneChanged();
-    partial void Onclient_passwordChanging(string value);
-    partial void Onclient_passwordChanged();
-    partial void Onclient_userChanging(string value);
-    partial void Onclient_userChanged();
     partial void Onnewmember_priceChanging(System.Nullable<int> value);
     partial void Onnewmember_priceChanged();
     partial void Onnewmember_stockChanging(System.Nullable<int> value);
@@ -1329,46 +1321,6 @@ namespace Server
 					this._org_phone = value;
 					this.SendPropertyChanged("org_phone");
 					this.Onorg_phoneChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_client_password", DbType="NVarChar(MAX)")]
-		public string client_password
-		{
-			get
-			{
-				return this._client_password;
-			}
-			set
-			{
-				if ((this._client_password != value))
-				{
-					this.Onclient_passwordChanging(value);
-					this.SendPropertyChanging();
-					this._client_password = value;
-					this.SendPropertyChanged("client_password");
-					this.Onclient_passwordChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_client_user", DbType="NVarChar(MAX)")]
-		public string client_user
-		{
-			get
-			{
-				return this._client_user;
-			}
-			set
-			{
-				if ((this._client_user != value))
-				{
-					this.Onclient_userChanging(value);
-					this.SendPropertyChanging();
-					this._client_user = value;
-					this.SendPropertyChanged("client_user");
-					this.Onclient_userChanged();
 				}
 			}
 		}

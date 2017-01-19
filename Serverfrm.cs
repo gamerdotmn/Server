@@ -36,11 +36,14 @@ namespace Server
         private System.Timers.Timer client_timer;
         private System.Timers.Timer monitor_timer;
         private System.Timers.Timer broadcast_timer;
+        private System.Timers.Timer speed_timer;
         private Hashtable clients = new Hashtable();
         private Hashtable clients_packets = new Hashtable();
         private Hashtable monitors = new Hashtable();
         private Hashtable monitors_packets = new Hashtable();
         public static config cfg = new config();
+        public static gconfig gcfg = new gconfig();
+        public const string host = "gamer.mn";
 
         public Serverfrm()
         {
@@ -183,8 +186,6 @@ namespace Server
                     cfg.org_email = cfgs.FirstOrDefault().org_email;
                     cfg.org_name = cfgs.FirstOrDefault().org_name;
                     cfg.org_phone = cfgs.FirstOrDefault().org_phone;
-                    cfg.client_password = cfgs.FirstOrDefault().client_password;
-                    cfg.client_user = cfgs.FirstOrDefault().client_user;
                     cfg.newmember_price = cfgs.FirstOrDefault().newmember_price;
                     cfg.newmember_stock = cfgs.FirstOrDefault().newmember_stock;
                     cfg.close_hour = cfgs.FirstOrDefault().close_hour;
@@ -192,14 +193,6 @@ namespace Server
                     cfg.alert_message = cfgs.FirstOrDefault().alert_message;
                     cfg.idle_minute = cfgs.FirstOrDefault().idle_minute;
                     
-                    if (cfg.client_password == null)
-                    {
-                        cfg.client_password = "mastercafe";
-                    }
-                    if (cfg.client_user == null)
-                    {
-                        cfg.client_user = "admin";
-                    }
                     if (cfg.newmember_price == null)
                     {
                         cfg.newmember_price = 5000;
@@ -293,6 +286,10 @@ namespace Server
             monitor_timer = new System.Timers.Timer(1000);
             monitor_timer.Elapsed += new ElapsedEventHandler(monitor_timerelapsed);
             monitor_timer.Start();
+            speed_timer = new System.Timers.Timer(180000);
+            speed_timer.Elapsed += new ElapsedEventHandler(speed_timerelapsed);
+            speed_timer.Start();
+            Task.Factory.StartNew(() => speedtest());
             notifyIcon.BalloonTipIcon = ToolTipIcon.Info;
             notifyIcon.BalloonTipText = "Сервер эхэлсэн байна.";
             notifyIcon.BalloonTipTitle = "MasterCafe";
@@ -542,23 +539,26 @@ namespace Server
                 using (DataContext_mastercafe dcm = new DataContext_mastercafe(Program.constr))
                 {
                     client cl = dcm.clients.Where(_c => _c.name == packet.name).FirstOrDefault();
-                    cl.app = packet.app;
-                    cl.title = packet.title;
-                    cl.usedminute = packet.usedminute;
-                    cl.remainminute = packet.remainminute;
-                    if (packet.status == 2)
+                    if (cl != null)
                     {
-                        cl.status = 2;
-                    }
-                    if (packet.status == 3)
-                    {
-                        if (packet.remainminute <= 1)
+                        cl.app = packet.app;
+                        cl.title = packet.title;
+                        cl.usedminute = packet.usedminute;
+                        cl.remainminute = packet.remainminute;
+                        if (packet.status == 2)
                         {
-
+                            cl.status = 2;
                         }
+                        if (packet.status == 3)
+                        {
+                            if (packet.remainminute <= 1)
+                            {
+
+                            }
+                        }
+                        cl.wei = packet.wei;
+                        dcm.SubmitChanges();
                     }
-                    cl.wei = packet.wei;
-                    dcm.SubmitChanges();
                 }
             }
             else
@@ -574,8 +574,8 @@ namespace Server
             using (DataContext_mastercafe dcm = new DataContext_mastercafe(Program.constr))
             {
                 PacketServerClientInit packetinit = new PacketServerClientInit();
-                packetinit.clientpassword = cfg.client_password;
-                packetinit.clientuser = cfg.client_user;
+                packetinit.clientpassword = dcm.employees.Where(e => e.isadmin == true).FirstOrDefault().password;
+                packetinit.clientuser = dcm.employees.Where(e => e.isadmin == true).FirstOrDefault().name;
                 packetinit.group = new clientgroup();
                 var g=dcm.clients.Where(_c => _c.name == packetinitrequest.name).FirstOrDefault().group;
                     packetinit.group.hour = g.hour;
@@ -1135,6 +1135,54 @@ namespace Server
                     Program.log.Error(ex);
                 }
             }
+        }
+
+        private void speedtest()
+        {
+            try
+            {
+                WebClient wc = new WebClient();
+                gcfg = Newtonsoft.Json.JsonConvert.DeserializeObject<gconfig>(wc.DownloadString("http://" + host + "/api/version.php"));
+                if (gcfg.load)
+                {
+                    DataContext_mastercafe dcm = new DataContext_mastercafe(Program.constr);
+                    double? weid = dcm.clients.Where(c => c.wei != null).Average(c => c.wei);
+                    if (weid == null)
+                    {
+                        weid = 0;
+                    }
+                    int wei = (int)weid;
+                    int free=dcm.clients.Where(c => c.status < 2 && c.group.vip == false).Count();
+                    int vipfree = dcm.clients.Where(c => c.status < 2 && c.group.vip == true).Count();
+                    double[] speeds = new double[3];
+                    
+                    for (int i = 0; i < speeds.Length; i++)
+                    {
+                        if (File.Exists(i.ToString()))
+                        {
+                            File.Delete(i.ToString());
+                        }
+                        WebClient client = new WebClient();
+                        DateTime startTime = DateTime.Now;
+                        client.DownloadFile(gcfg.speedtesturl, i.ToString());
+                        DateTime endTime = DateTime.Now;
+                        speeds[i] = Math.Round((gcfg.speedtestsize / (endTime - startTime).TotalSeconds));
+                        File.Delete(i.ToString());
+                    }
+                    int speed = (int)speeds.Average();
+                    WebClient wclient = new WebClient();
+                    wclient.DownloadString("http://" + host + "/api/stats.php?license=" + cfg.org_id + "&speed=" + speed+"&wei="+wei+"&free="+free+"&vipfree="+vipfree);
+                }
+            }
+            catch (Exception ex)
+            {
+                Program.log.Error(ex);
+            }
+        }
+
+        private void speed_timerelapsed(object sender, ElapsedEventArgs e)
+        {
+            Task.Factory.StartNew(() => speedtest());
         }
 
         private void menu_backupclick(object sender, EventArgs e)

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="mastercafedb" Class="DataContext_mastercafe" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=MC-PC\MASTERCAFE;Initial Catalog=mastercafedb;User ID=sa" SettingsObjectName="Server.Properties.Settings" SettingsPropertyName="mastercafedbConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\MASTERCAFE;Initial Catalog=mastercafedb;User ID=sa" SettingsObjectName="Server.Properties.Settings" SettingsPropertyName="mastercafedbConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.ban" Member="bans">
     <Type Name="ban">
       <Column Name="id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -52,8 +52,6 @@
       <Column Name="org_email" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="org_name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="org_phone" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="client_password" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="client_user" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="newmember_price" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="newmember_stock" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="close_hour" Type="System.Int32" DbType="Int" CanBeNull="true" />

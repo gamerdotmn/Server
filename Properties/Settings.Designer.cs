@@ -26,11 +26,21 @@ namespace Server.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MC-PC\\MASTERCAFE;Initial Catalog=mastercafedb;User ID=sa;Password=pld" +
-            "ifvzz7x")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MC-PC\\MASTERCAFE;Initial Catalog=mastercafedb;User ID=sa")]
         public string mastercafedbConnectionString {
             get {
                 return ((string)(this["mastercafedbConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\MASTERCAFE;Initial Catalog=mastercafedb;User ID=sa;Password=pldifvz" +
+            "z7x")]
+        public string mastercafedbConnectionString1 {
+            get {
+                return ((string)(this["mastercafedbConnectionString1"]));
             }
         }
     }

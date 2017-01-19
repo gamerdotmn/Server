@@ -4,6 +4,28 @@ using System.Text;
 
 namespace Server
 {
+    public class gconfig
+    {
+        public bool load = false;
+        public int version;
+        public string speedtesturl;
+        public int speedtestsize;
+    }
+
+    public class clientgroup
+    {
+        public Guid id;
+        public string name;
+        public int timecodeprice;
+        public int memberprice;
+        public int hourprice;
+        public bool timecode;
+        public bool member;
+        public bool hour;
+        public bool prepairhour;
+        public int minprice;
+    }
+
     public class Packet
     {
         public string id;
