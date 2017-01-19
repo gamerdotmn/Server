@@ -1,0 +1,270 @@
+﻿2017-01-06 01:13:49,542 [10] INFO  Server.Program [(null)] - EN
+2017-01-06 01:13:49,556 [10] INFO  Server.Program [(null)] - Ports are not using.
+2017-01-06 01:13:50,571 [10] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(0)
+2017-01-06 01:13:50,598 [10] INFO  Server.Program [(null)] - Config count, 1
+2017-01-06 01:13:59,493 [22] INFO  Server.Program [(null)] - 192.168.1.8, monitor connect.
+2017-01-06 01:14:37,701 [22] INFO  Server.Program [(null)] - 192.168.1.8, monitor disconnect.
+2017-01-06 01:16:47,974 [10] INFO  Server.Program [(null)] - EN
+2017-01-06 01:16:47,987 [10] INFO  Server.Program [(null)] - Ports are not using.
+2017-01-06 01:16:49,003 [10] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(0)
+2017-01-06 01:16:49,030 [10] INFO  Server.Program [(null)] - Config count, 1
+2017-01-06 01:16:53,475 [20] INFO  Server.Program [(null)] - 192.168.1.8, monitor connect.
+2017-01-06 01:44:17,241 [8] INFO  Server.Program [(null)] - EN
+2017-01-06 01:44:17,255 [8] INFO  Server.Program [(null)] - Ports are not using.
+2017-01-06 01:44:18,272 [8] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(0)
+2017-01-06 01:44:18,298 [8] INFO  Server.Program [(null)] - Config count, 1
+2017-01-06 01:44:25,760 [20] INFO  Server.Program [(null)] - 192.168.1.8, monitor connect.
+2017-01-06 01:44:36,048 [20] INFO  Server.Program [(null)] - 192.168.1.8, monitor disconnect.
+2017-01-06 01:51:10,245 [15] INFO  Server.Program [(null)] - 192.168.1.8, monitor connect.
+2017-01-06 01:51:20,637 [22] INFO  Server.Program [(null)] - 192.168.1.8, monitor disconnect.
+2017-01-06 01:51:46,124 [15] INFO  Server.Program [(null)] - 192.168.1.8, monitor connect.
+2017-01-06 01:51:57,141 [15] INFO  Server.Program [(null)] - 192.168.1.8, monitor disconnect.
+2017-01-06 01:56:48,306 [9] INFO  Server.Program [(null)] - EN
+2017-01-06 01:56:48,319 [9] INFO  Server.Program [(null)] - Ports are not using.
+2017-01-06 01:56:49,347 [9] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(0)
+2017-01-06 01:56:49,374 [9] INFO  Server.Program [(null)] - Config count, 1
+2017-01-06 01:56:55,950 [18] INFO  Server.Program [(null)] - 192.168.1.8, monitor connect.
+2017-01-06 01:57:08,066 [22] INFO  Server.Program [(null)] - 192.168.1.8, monitor disconnect.
+2017-01-06 01:58:33,595 [22] INFO  Server.Program [(null)] - 192.168.1.8, monitor connect.
+2017-01-06 01:58:43,683 [19] INFO  Server.Program [(null)] - 192.168.1.8, monitor disconnect.
+2017-01-06 02:01:07,642 [15] INFO  Server.Program [(null)] - 192.168.1.8, monitor connect.
+2017-01-06 02:01:17,808 [29] INFO  Server.Program [(null)] - 192.168.1.8, monitor disconnect.
+2017-01-06 02:03:10,982 [26] INFO  Server.Program [(null)] - 192.168.1.8, monitor connect.
+2017-01-06 02:03:21,518 [31] INFO  Server.Program [(null)] - 192.168.1.8, monitor disconnect.
+2017-01-06 02:07:50,032 [31] INFO  Server.Program [(null)] - 192.168.1.8, monitor connect.
+2017-01-06 02:08:00,369 [23] INFO  Server.Program [(null)] - 192.168.1.8, monitor disconnect.
+2017-01-06 02:09:51,986 [31] INFO  Server.Program [(null)] - 192.168.1.8, monitor connect.
+2017-01-06 02:10:04,077 [30] INFO  Server.Program [(null)] - 192.168.1.8, monitor disconnect.
+2017-01-06 02:10:20,139 [27] INFO  Server.Program [(null)] - 192.168.1.8, monitor connect.
+2017-01-06 02:10:30,443 [27] INFO  Server.Program [(null)] - 192.168.1.8, monitor disconnect.
+2017-01-06 02:15:41,815 [23] INFO  Server.Program [(null)] - 192.168.1.8, monitor connect.
+2017-01-06 02:15:53,912 [30] INFO  Server.Program [(null)] - 192.168.1.8, monitor disconnect.
+2017-01-06 02:25:30,268 [21] INFO  Server.Program [(null)] - 192.168.1.8, monitor connect.
+2017-01-06 02:25:51,160 [23] INFO  Server.Program [(null)] - 192.168.1.8, monitor disconnect.
+2017-01-06 02:25:57,807 [23] INFO  Server.Program [(null)] - 192.168.1.8, monitor connect.
+2017-01-06 02:27:16,336 [27] INFO  Server.Program [(null)] - 192.168.1.8, monitor disconnect.
+2017-01-06 02:30:04,032 [30] INFO  Server.Program [(null)] - 192.168.1.8, monitor connect.
+2017-01-06 02:30:14,802 [3] INFO  Server.Program [(null)] - 192.168.1.8, monitor disconnect.
+2017-01-06 02:30:15,988 [27] INFO  Server.Program [(null)] - 192.168.1.8, monitor connect.
+2017-01-06 02:40:24,846 [28] INFO  Server.Program [(null)] - 192.168.1.8, monitor disconnect.
+2017-01-06 02:40:30,448 [30] INFO  Server.Program [(null)] - 192.168.1.8, monitor connect.
+2017-01-06 02:40:59,321 [19] INFO  Server.Program [(null)] - 192.168.1.8, monitor disconnect.
+2017-01-06 02:42:26,671 [19] INFO  Server.Program [(null)] - 192.168.1.8, monitor connect.
+2017-01-06 02:42:45,829 [16] INFO  Server.Program [(null)] - 192.168.1.8, monitor disconnect.
+2017-01-06 12:50:44,841 [1] INFO  Server.Program [(null)] - EN
+2017-01-06 12:50:44,857 [1] INFO  Server.Program [(null)] - Ports are not using.
+2017-01-06 12:50:51,225 [1] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(0)
+2017-01-06 12:50:52,556 [1] INFO  Server.Program [(null)] - Config count, 1
+2017-01-06 13:38:26,930 [19] INFO  Server.Program [(null)] - 192.168.1.13, monitor connect.
+2017-01-06 13:39:54,093 [7] INFO  Server.Program [(null)] - EN
+2017-01-06 13:39:54,106 [7] INFO  Server.Program [(null)] - Ports are not using.
+2017-01-06 13:39:55,121 [7] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(0)
+2017-01-06 13:39:55,153 [7] INFO  Server.Program [(null)] - Config count, 1
+2017-01-06 13:39:57,416 [16] INFO  Server.Program [(null)] - 192.168.1.13, monitor connect.
+2017-01-06 13:40:51,423 [16] INFO  Server.Program [(null)] - 192.168.1.13, monitor disconnect.
+2017-01-06 14:34:57,233 [13] INFO  Server.Program [(null)] - 192.168.1.13, monitor connect.
+2017-01-06 14:37:22,260 [10] INFO  Server.Program [(null)] - 192.168.1.13, monitor disconnect.
+2017-01-06 14:48:01,848 [24] INFO  Server.Program [(null)] - 192.168.1.13, monitor connect.
+2017-01-06 14:53:14,429 [26] INFO  Server.Program [(null)] - 192.168.1.13, monitor disconnect.
+2017-01-06 15:12:59,310 [22] INFO  Server.Program [(null)] - 192.168.1.13, monitor connect.
+2017-01-06 15:13:08,810 [16] INFO  Server.Program [(null)] - 192.168.1.15,  connect.
+2017-01-06 15:13:09,814 [16] INFO  Server.Program [(null)] - 192.168.1.15 , init.
+2017-01-06 15:14:48,285 [21] INFO  Server.Program [(null)] - 192.168.1.13, monitor disconnect.
+2017-01-06 15:14:52,125 [17] INFO  Server.Program [(null)] - 192.168.1.13, monitor connect.
+2017-01-06 15:15:12,620 [17] INFO  Server.Program [(null)] - 192.168.1.13, monitor disconnect.
+2017-01-06 15:20:49,294 [16] INFO  Server.Program [(null)] - 192.168.1.15 ,disconnect
+2017-01-06 15:26:31,575 [16] INFO  Server.Program [(null)] - 192.168.1.13, monitor connect.
+2017-01-06 15:28:25,131 [16] INFO  Server.Program [(null)] - 192.168.1.15,  connect.
+2017-01-06 15:28:26,138 [21] INFO  Server.Program [(null)] - 192.168.1.15 , init.
+2017-01-06 15:28:52,957 [23] INFO  Server.Program [(null)] - 192.168.1.15 ,disconnect
+2017-01-06 15:29:34,005 [10] INFO  Server.Program [(null)] - 192.168.1.15,  connect.
+2017-01-06 15:29:35,007 [19] INFO  Server.Program [(null)] - 192.168.1.15 , init.
+2017-01-06 15:30:02,921 [25] INFO  Server.Program [(null)] - 192.168.1.15 ,disconnect
+2017-01-06 15:31:11,870 [25] INFO  Server.Program [(null)] - 192.168.1.13, monitor disconnect.
+2017-01-06 16:44:08,870 [8] INFO  Server.Program [(null)] - Ports are not using.
+2017-01-06 16:44:09,919 [8] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(0)
+2017-01-06 16:44:09,955 [8] INFO  Server.Program [(null)] - Config count, 1
+2017-01-06 16:44:17,648 [8] INFO  Server.Program [(null)] - Backup database complete.
+2017-01-06 19:02:50,740 [1] INFO  Server.Program [(null)] - Ports are not using.
+2017-01-06 19:03:02,011 [1] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(0)
+2017-01-06 19:03:12,230 [1] INFO  Server.Program [(null)] - Config count, 1
+2017-01-06 19:13:25,258 [1] INFO  Server.Program [(null)] - Ports are not using.
+2017-01-06 19:13:29,548 [1] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(0)
+2017-01-06 19:13:32,044 [1] INFO  Server.Program [(null)] - Config count, 1
+2017-01-07 14:33:39,730 [1] INFO  Server.Program [(null)] - Ports are not using.
+2017-01-07 14:33:44,410 [1] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(0)
+2017-01-07 14:33:49,434 [1] INFO  Server.Program [(null)] - Config count, 1
+2017-01-09 12:32:24,557 [1] INFO  Server.Program [(null)] - Ports are not using.
+2017-01-09 12:32:37,508 [1] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(0)
+2017-01-09 12:32:45,845 [1] INFO  Server.Program [(null)] - Config count, 1
+2017-01-10 16:39:20,675 [8] INFO  Server.Program [(null)] - Ports are not using.
+2017-01-10 16:39:21,724 [8] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(0)
+2017-01-10 17:00:35,363 [7] INFO  Server.Program [(null)] - Ports are not using.
+2017-01-10 17:00:36,390 [7] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(0)
+2017-01-10 17:05:55,151 [7] INFO  Server.Program [(null)] - Ports are not using.
+2017-01-10 17:05:56,194 [7] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(0)
+2017-01-10 17:06:07,741 [7] INFO  Server.Program [(null)] - Register, axeeaxe@yahoo.com
+2017-01-10 17:08:55,288 [9] INFO  Server.Program [(null)] - Ports are not using.
+2017-01-10 17:08:56,315 [9] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(0)
+2017-01-10 17:09:18,895 [9] INFO  Server.Program [(null)] - Register, eaxionn@gmail.com
+2017-01-10 17:09:21,269 [9] INFO  Server.Program [(null)] - Register, eaxionn@gmail.com
+2017-01-10 17:24:30,144 [8] INFO  Server.Program [(null)] - Ports are not using.
+2017-01-10 17:24:31,186 [8] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(0)
+2017-01-10 17:34:52,761 [9] INFO  Server.Program [(null)] - Ports are not using.
+2017-01-10 17:34:53,807 [9] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(0)
+2017-01-10 17:35:05,433 [9] INFO  Server.Program [(null)] - Forget, eaxionn@gmail.com
+2017-01-10 17:35:05,629 [9] ERROR Server.Program [(null)] - System.DivideByZeroException: Attempted to divide by zero.
+   at Monitor.Labelerr.Settext(String _err) in d:\MasterCafe\Server\Labelerr.cs:line 17
+   at Server.Account.button_femail_Click(Object sender, EventArgs e) in d:\MasterCafe\Server\Account.cs:line 164
+2017-01-10 17:35:19,450 [9] INFO  Server.Program [(null)] - Login, eaxionn@gmail.com
+2017-01-10 17:35:19,748 [9] INFO  Server.Program [(null)] - Config count, 1
+2017-01-10 17:58:05,133 [7] INFO  Server.Program [(null)] - Ports are not using.
+2017-01-10 17:58:06,159 [7] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(0)
+2017-01-10 17:58:06,190 [7] INFO  Server.Program [(null)] - Config count, 1
+2017-01-10 17:59:52,100 [7] INFO  Server.Program [(null)] - Ports are not using.
+2017-01-10 17:59:53,126 [7] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(0)
+2017-01-10 17:59:53,155 [7] INFO  Server.Program [(null)] - Config count, 1
+2017-01-10 18:00:21,268 [8] INFO  Server.Program [(null)] - Ports are not using.
+2017-01-10 18:00:22,295 [8] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(0)
+2017-01-10 18:00:22,321 [8] INFO  Server.Program [(null)] - Config count, 1
+2017-01-10 18:27:18,645 [7] INFO  Server.Program [(null)] - Ports are not using.
+2017-01-10 18:27:19,715 [7] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(0)
+2017-01-10 18:27:19,741 [7] INFO  Server.Program [(null)] - Config count, 1
+2017-01-10 18:30:01,690 [7] INFO  Server.Program [(null)] - Backup database complete.
+2017-01-10 18:30:16,825 [8] INFO  Server.Program [(null)] - Ports are not using.
+2017-01-10 18:30:17,856 [8] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(0)
+2017-01-10 18:30:17,876 [8] INFO  Server.Program [(null)] - Config count, 1
+2017-01-10 18:30:31,229 [8] INFO  Server.Program [(null)] - Backup database complete.
+2017-01-10 19:06:56,693 [27] INFO  Server.Program [(null)] - 127.0.0.1, monitor connect.
+2017-01-10 19:06:58,471 [26] INFO  Server.Program [(null)] - 192.168.1.8, monitor connect.
+2017-01-10 19:07:07,488 [23] INFO  Server.Program [(null)] - 127.0.0.1, monitor disconnect.
+2017-01-10 19:11:46,338 [27] INFO  Server.Program [(null)] - 192.168.1.8, monitor disconnect.
+2017-01-10 19:12:59,486 [24] INFO  Server.Program [(null)] - 127.0.0.1, monitor connect.
+2017-01-10 19:13:01,393 [29] INFO  Server.Program [(null)] - 192.168.1.8, monitor connect.
+2017-01-10 19:13:10,501 [24] INFO  Server.Program [(null)] - 127.0.0.1, monitor disconnect.
+2017-01-10 19:13:33,823 [28] INFO  Server.Program [(null)] - 192.168.1.8, monitor disconnect.
+2017-01-10 19:14:46,813 [29] INFO  Server.Program [(null)] - 127.0.0.1, monitor connect.
+2017-01-10 19:14:48,723 [19] INFO  Server.Program [(null)] - 192.168.1.8, monitor connect.
+2017-01-10 19:14:56,972 [31] INFO  Server.Program [(null)] - 127.0.0.1, monitor disconnect.
+2017-01-10 19:15:11,169 [11] INFO  Server.Program [(null)] - 192.168.1.8, monitor disconnect.
+2017-01-10 19:15:35,394 [29] INFO  Server.Program [(null)] - 127.0.0.1, monitor connect.
+2017-01-10 19:15:37,303 [36] INFO  Server.Program [(null)] - 192.168.1.8, monitor connect.
+2017-01-10 19:15:45,644 [24] INFO  Server.Program [(null)] - 127.0.0.1, monitor disconnect.
+2017-01-11 14:00:29,281 [1] INFO  Server.Program [(null)] - Ports are not using.
+2017-01-11 14:00:31,060 [1] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(0)
+2017-01-11 14:00:32,230 [1] INFO  Server.Program [(null)] - Config count, 1
+2017-01-11 17:17:19,212 [1] INFO  Server.Program [(null)] - Ports are not using.
+2017-01-11 17:17:23,297 [1] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(0)
+2017-01-11 17:17:24,092 [1] INFO  Server.Program [(null)] - Config count, 1
+2017-01-11 19:26:48,157 [1] INFO  Server.Program [(null)] - Ports are not using.
+2017-01-11 19:26:53,805 [1] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(0)
+2017-01-11 19:27:01,714 [1] INFO  Server.Program [(null)] - Config count, 1
+2017-01-11 19:34:37,361 [1] INFO  Server.Program [(null)] - Ports are not using.
+2017-01-11 19:34:38,923 [1] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(0)
+2017-01-11 19:34:41,327 [1] INFO  Server.Program [(null)] - Config count, 1
+2017-01-12 13:22:53,394 [1] INFO  Server.Program [(null)] - Ports are not using.
+2017-01-12 13:23:05,679 [1] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(0)
+2017-01-12 13:23:22,638 [1] INFO  Server.Program [(null)] - Config count, 1
+2017-01-12 14:26:42,058 [8] INFO  Server.Program [(null)] - Ports are not using.
+2017-01-12 14:26:43,117 [8] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(0)
+2017-01-12 14:26:43,163 [8] INFO  Server.Program [(null)] - Config count, 1
+2017-01-12 14:26:47,681 [19] INFO  Server.Program [(null)] - 127.0.0.1, monitor connect.
+2017-01-12 14:26:50,734 [20] INFO  Server.Program [(null)] - 192.168.1.9, monitor connect.
+2017-01-12 14:26:58,955 [17] INFO  Server.Program [(null)] - 127.0.0.1, monitor disconnect.
+2017-01-12 14:27:13,150 [23] INFO  Server.Program [(null)] - 192.168.1.9, monitor disconnect.
+2017-01-12 14:45:57,642 [20] INFO  Server.Program [(null)] - 127.0.0.1, monitor connect.
+2017-01-12 14:45:59,526 [20] INFO  Server.Program [(null)] - 192.168.1.9, monitor connect.
+2017-01-12 14:46:07,866 [24] INFO  Server.Program [(null)] - 127.0.0.1, monitor disconnect.
+2017-01-12 14:47:18,804 [20] INFO  Server.Program [(null)] - 192.168.1.9, monitor disconnect.
+2017-01-12 14:48:02,720 [23] INFO  Server.Program [(null)] - 127.0.0.1, monitor connect.
+2017-01-12 14:48:04,639 [22] INFO  Server.Program [(null)] - 192.168.1.9, monitor connect.
+2017-01-12 14:48:13,560 [26] INFO  Server.Program [(null)] - 127.0.0.1, monitor disconnect.
+2017-01-12 14:48:19,645 [17] INFO  Server.Program [(null)] - 192.168.1.9, monitor disconnect.
+2017-01-12 14:49:49,614 [21] INFO  Server.Program [(null)] - 127.0.0.1, monitor connect.
+2017-01-12 14:49:51,517 [29] INFO  Server.Program [(null)] - 192.168.1.9, monitor connect.
+2017-01-12 14:50:00,030 [31] INFO  Server.Program [(null)] - 127.0.0.1, monitor disconnect.
+2017-01-12 14:50:30,451 [31] INFO  Server.Program [(null)] - 192.168.1.9, monitor disconnect.
+2017-01-12 14:50:43,945 [21] INFO  Server.Program [(null)] - 127.0.0.1, monitor connect.
+2017-01-12 14:50:45,850 [30] INFO  Server.Program [(null)] - 192.168.1.9, monitor connect.
+2017-01-12 14:50:54,788 [19] INFO  Server.Program [(null)] - 127.0.0.1, monitor disconnect.
+2017-01-12 14:51:22,166 [30] INFO  Server.Program [(null)] - 192.168.1.9, monitor disconnect.
+2017-01-12 14:58:34,531 [28] INFO  Server.Program [(null)] - 127.0.0.1, monitor connect.
+2017-01-12 14:58:36,494 [20] INFO  Server.Program [(null)] - 192.168.1.9, monitor connect.
+2017-01-12 14:58:45,286 [19] INFO  Server.Program [(null)] - 127.0.0.1, monitor disconnect.
+2017-01-12 14:58:51,370 [15] INFO  Server.Program [(null)] - 192.168.1.9, monitor disconnect.
+2017-01-12 15:07:12,387 [15] INFO  Server.Program [(null)] - 127.0.0.1, monitor connect.
+2017-01-12 15:07:16,302 [28] INFO  Server.Program [(null)] - 192.168.1.9, monitor connect.
+2017-01-12 15:07:24,458 [15] INFO  Server.Program [(null)] - 127.0.0.1, monitor disconnect.
+2017-01-12 15:11:33,904 [28] INFO  Server.Program [(null)] - 192.168.1.9, monitor disconnect.
+2017-01-12 15:21:44,480 [11] INFO  Server.Program [(null)] - Ports are not using.
+2017-01-12 15:21:45,773 [11] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(0)
+2017-01-12 15:21:45,939 [11] INFO  Server.Program [(null)] - Config count, 1
+2017-01-12 15:27:47,948 [16] INFO  Server.Program [(null)] - 127.0.0.1, monitor connect.
+2017-01-12 15:27:49,708 [21] INFO  Server.Program [(null)] - 192.168.1.9, monitor connect.
+2017-01-12 15:27:58,226 [21] INFO  Server.Program [(null)] - 127.0.0.1, monitor disconnect.
+2017-01-12 15:28:02,348 [16] INFO  Server.Program [(null)] - 192.168.1.9, monitor disconnect.
+2017-01-12 15:29:35,165 [18] INFO  Server.Program [(null)] - 127.0.0.1, monitor connect.
+2017-01-12 15:29:37,083 [26] INFO  Server.Program [(null)] - 192.168.1.9, monitor connect.
+2017-01-12 15:29:45,708 [26] INFO  Server.Program [(null)] - 127.0.0.1, monitor disconnect.
+2017-01-12 15:30:32,399 [27] INFO  Server.Program [(null)] - 127.0.0.1, monitor connect.
+2017-01-12 15:30:36,409 [26] INFO  Server.Program [(null)] - 192.168.1.9, monitor disconnect.
+2017-01-12 15:31:00,744 [25] INFO  Server.Program [(null)] - 127.0.0.1, monitor disconnect.
+2017-01-12 15:31:11,393 [14] INFO  Server.Program [(null)] - 127.0.0.1, monitor connect.
+2017-01-12 15:31:13,288 [25] INFO  Server.Program [(null)] - 192.168.1.9, monitor connect.
+2017-01-12 15:31:22,038 [28] INFO  Server.Program [(null)] - 127.0.0.1, monitor disconnect.
+2017-01-12 15:32:32,015 [26] INFO  Server.Program [(null)] - 192.168.1.9, monitor disconnect.
+2017-01-12 15:33:08,242 [14] INFO  Server.Program [(null)] - 127.0.0.1, monitor connect.
+2017-01-12 15:33:10,118 [14] INFO  Server.Program [(null)] - 192.168.1.9, monitor connect.
+2017-01-12 15:33:18,651 [30] INFO  Server.Program [(null)] - 127.0.0.1, monitor disconnect.
+2017-01-12 16:54:10,671 [24] INFO  Server.Program [(null)] - 192.168.1.9, monitor disconnect.
+2017-01-12 16:54:15,671 [26] INFO  Server.Program [(null)] - 127.0.0.1, monitor connect.
+2017-01-12 16:54:17,584 [18] INFO  Server.Program [(null)] - 192.168.1.9, monitor connect.
+2017-01-12 16:54:25,881 [16] INFO  Server.Program [(null)] - 127.0.0.1, monitor disconnect.
+2017-01-12 17:00:49,175 [14] INFO  Server.Program [(null)] - 192.168.1.9, monitor disconnect.
+2017-01-13 10:44:55,480 [1] INFO  Server.Program [(null)] - Ports are not using.
+2017-01-13 10:44:56,884 [1] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(0)
+2017-01-13 10:44:59,880 [1] INFO  Server.Program [(null)] - Config count, 1
+2017-01-16 11:07:20,257 [1] INFO  Server.Program [(null)] - Ports are not using.
+2017-01-16 11:07:26,924 [1] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(0)
+2017-01-16 11:07:37,928 [1] INFO  Server.Program [(null)] - Config count, 1
+2017-01-17 12:23:23,678 [1] INFO  Server.Program [(null)] - Ports are not using.
+2017-01-17 12:23:28,524 [1] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(0)
+2017-01-17 12:23:34,348 [1] INFO  Server.Program [(null)] - Config count, 1
+2017-01-18 15:35:42,820 [8] INFO  Server.Program [(null)] - Ports are not using.
+2017-01-18 15:35:43,914 [8] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(0)
+2017-01-18 15:44:46,058 [8] INFO  Server.Program [(null)] - Register, eaxionn@gmail.com
+2017-01-18 15:44:46,456 [8] ERROR Server.Program [(null)] - System.DivideByZeroException: Attempted to divide by zero.
+   at Monitor.Labelerr.Settext(String _err) in d:\MasterCafe\Server\Labelerr.cs:line 17
+   at Server.Account.button_register_Click(Object sender, EventArgs e) in d:\MasterCafe\Server\Account.cs:line 122
+2017-01-18 17:05:55,609 [8] INFO  Server.Program [(null)] - Ports are not using.
+2017-01-18 17:05:57,843 [8] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(0)
+2017-01-18 17:06:14,521 [8] INFO  Server.Program [(null)] - Register, eaxionn@gmail.com
+2017-01-18 17:06:14,937 [8] ERROR Server.Program [(null)] - System.DivideByZeroException: Attempted to divide by zero.
+   at Monitor.Labelerr.Settext(String _err) in d:\MasterCafe\Server\Labelerr.cs:line 17
+   at Server.Account.button_register_Click(Object sender, EventArgs e) in d:\MasterCafe\Server\Account.cs:line 122
+2017-01-18 17:08:39,565 [8] INFO  Server.Program [(null)] - Forget, eaxionn@gmail.com
+2017-01-18 17:08:39,709 [8] ERROR Server.Program [(null)] - System.DivideByZeroException: Attempted to divide by zero.
+   at Monitor.Labelerr.Settext(String _err) in d:\MasterCafe\Server\Labelerr.cs:line 17
+   at Server.Account.button_femail_Click(Object sender, EventArgs e) in d:\MasterCafe\Server\Account.cs:line 164
+2017-01-18 17:13:22,333 [8] INFO  Server.Program [(null)] - Ports are not using.
+2017-01-18 17:13:23,404 [8] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(0)
+2017-01-18 17:13:32,924 [8] INFO  Server.Program [(null)] - Login, eaxionn@gmail.com
+2017-01-18 17:13:34,554 [8] INFO  Server.Program [(null)] - Login, eaxionn@gmail.com
+2017-01-18 17:13:42,498 [8] INFO  Server.Program [(null)] - Login, eaxionn@gmail.com
+2017-01-18 17:13:42,848 [8] INFO  Server.Program [(null)] - Config count, 1
+2017-01-18 17:20:54,361 [9] INFO  Server.Program [(null)] - Ports are not using.
+2017-01-18 17:20:55,401 [9] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(0)
+2017-01-18 17:21:34,145 [9] INFO  Server.Program [(null)] - Register, eaxionn@gmail.com
+2017-01-18 17:21:34,376 [9] ERROR Server.Program [(null)] - System.DivideByZeroException: Attempted to divide by zero.
+   at Monitor.Labelerr.Settext(String _err) in d:\MasterCafe\Server\Labelerr.cs:line 17
+   at Server.Account.button_register_Click(Object sender, EventArgs e) in d:\MasterCafe\Server\Account.cs:line 122
+2017-01-18 17:33:43,527 [9] INFO  Server.Program [(null)] - Login, eaxionn@gmail.com
+2017-01-18 17:33:43,636 [9] INFO  Server.Program [(null)] - Config count, 1
+2017-01-18 17:36:38,015 [9] INFO  Server.Program [(null)] - Backup database complete.
+2017-01-18 17:39:05,585 [8] INFO  Server.Program [(null)] - Ports are not using.
+2017-01-18 17:39:06,623 [8] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(0)
+2017-01-18 17:39:06,654 [8] INFO  Server.Program [(null)] - Config count, 1
+2017-01-18 17:56:26,552 [8] INFO  Server.Program [(null)] - Ports are not using.
+2017-01-18 17:56:27,579 [8] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(0)
+2017-01-18 17:57:07,867 [8] INFO  Server.Program [(null)] - Login, eaxionn@gmail.com
+2017-01-18 17:57:08,329 [8] INFO  Server.Program [(null)] - Config count, 1

@@ -1,0 +1,272 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Admin.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="databasescript" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+CREATE TABLE [ban](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[word] [nvarchar](max) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+ CONSTRAINT [PK_ban] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+) ON [PRIMARY]
+) ON [PRIMARY]
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+CREATE TABLE [hourtemplate](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[name] [nvarchar](max) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+	[stock] [int] NOT NULL,
+	[price] [int] NOT NULL,
+	[beghour] [int] NOT NULL,
+	[endhour] [int] NOT NULL,
+ CONSTRAINT [PK_timetemplate] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+) ON [PRIMARY]
+) ON [PRIMARY]
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+CREATE TABLE [member](
+	[name] [nvarchar](50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+	[password] [nvarchar](max) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+	[stock] [int] NOT NULL,
+	[ot] [smalldatetime] NOT NULL,
+ CONSTRAINT [PK_member] PRIMARY KEY CLUSTERED 
+(
+	[name] ASC
+) ON [PRIMARY]
+) ON [PRIMARY]
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+CREATE TABLE [timecode](
+	[code] [nchar](10) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+	[stock] [int] NOT NULL,
+	[ot] [smalldatetime] NOT NULL,
+ CONSTRAINT [PK_timekey] PRIMARY KEY CLUSTERED 
+(
+	[code] ASC
+) ON [PRIMARY]
+) ON [PRIMARY]
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+CREATE TABLE [groups](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[name] [nvarchar](max) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+	[timecodeprice] [int] NOT NULL,
+	[memberprice] [int] NOT NULL,
+	[hourprice] [int] NOT NULL,
+	[timecode] [tinyint] NOT NULL,
+	[member] [tinyint] NOT NULL,
+	[hour] [tinyint] NOT NULL,
+	[prepairhour] [tinyint] NOT NULL,
+	[minprice] [int] NOT NULL,
+ CONSTRAINT [PK_group] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+) ON [PRIMARY]
+) ON [PRIMARY]
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+CREATE TABLE [employee](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[name] [nvarchar](max) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+	[password] [nvarchar](max) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+	[type] [tinyint] NOT NULL,
+	[connected] [tinyint] NOT NULL,
+	[ip] [varchar](50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+ CONSTRAINT [PK_employee] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+) ON [PRIMARY]
+) ON [PRIMARY]
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+CREATE TABLE [client_member](
+	[id] [bigint] IDENTITY(1,1) NOT NULL,
+	[client_name] [nvarchar](128) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+	[member_name] [nvarchar](50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+	[stock] [int] NOT NULL,
+	[begint] [smalldatetime] NOT NULL,
+	[endt] [smalldatetime] NOT NULL,
+ CONSTRAINT [PK_client_member] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+) ON [PRIMARY]
+) ON [PRIMARY]
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+CREATE TABLE [employee_member](
+	[id] [bigint] IDENTITY(1,1) NOT NULL,
+	[employee_id] [int] NOT NULL,
+	[member_name] [nvarchar](50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+	[price] [int] NOT NULL,
+	[ot] [smalldatetime] NOT NULL,
+ CONSTRAINT [PK_employee_member] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+) ON [PRIMARY]
+) ON [PRIMARY]
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+CREATE TABLE [buddy](
+	[id] [int] NOT NULL,
+	[self_member_name] [nvarchar](50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+	[friend_member_name] [nvarchar](50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+	[ok] [tinyint] NOT NULL,
+ CONSTRAINT [PK_buddy] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+) ON [PRIMARY]
+) ON [PRIMARY]
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+CREATE TABLE [client_timecode](
+	[id] [bigint] IDENTITY(1,1) NOT NULL,
+	[client_name] [nvarchar](128) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+	[timecode_code] [nchar](10) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+	[stock] [int] NOT NULL,
+	[begint] [smalldatetime] NOT NULL,
+	[endt] [smalldatetime] NOT NULL,
+ CONSTRAINT [PK_client_timecode] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+) ON [PRIMARY]
+) ON [PRIMARY]
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+CREATE TABLE [employee_timecode](
+	[id] [bigint] IDENTITY(1,1) NOT NULL,
+	[employee_id] [int] NOT NULL,
+	[price] [int] NOT NULL,
+	[timecode_code] [nchar](10) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+	[ot] [smalldatetime] NOT NULL,
+ CONSTRAINT [PK_employee_timecode] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+) ON [PRIMARY]
+) ON [PRIMARY]
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+CREATE TABLE [employee_hour](
+	[id] [bigint] IDENTITY(1,1) NOT NULL,
+	[employee_id] [int] NOT NULL,
+	[client_name] [nvarchar](128) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+	[price] [int] NOT NULL,
+	[ot] [smalldatetime] NOT NULL,
+ CONSTRAINT [PK_employee_hour] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+) ON [PRIMARY]
+) ON [PRIMARY]
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+CREATE TABLE [client_hour](
+	[id] [bigint] IDENTITY(1,1) NOT NULL,
+	[client_name] [nvarchar](128) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+	[stock] [int] NOT NULL,
+	[begint] [smalldatetime] NOT NULL,
+	[endt] [smalldatetime] NOT NULL,
+ CONSTRAINT [PK_client_hour] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+) ON [PRIMARY]
+) ON [PRIMARY]
+SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+CREATE TABLE [client](
+	[name] [nvarchar](128) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+	[ip] [varchar](50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+	[mac] [ntext] COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+	[group_id] [int] NOT NULL,
+	[status] [tinyint] NOT NULL,
+	[data] [ntext] COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+ CONSTRAINT [PK_client] PRIMARY KEY CLUSTERED 
+(
+	[name] ASC
+) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+ALTER TABLE [client_member]  WITH CHECK ADD  CONSTRAINT [FK_client_member_client] FOREIGN KEY([client_name])
+REFERENCES [client] ([name])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+ALTER TABLE [client_member] CHECK CONSTRAINT [FK_client_member_client]
+ALTER TABLE [client_member]  WITH CHECK ADD  CONSTRAINT [FK_client_member_member] FOREIGN KEY([member_name])
+REFERENCES [member] ([name])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+ALTER TABLE [client_member] CHECK CONSTRAINT [FK_client_member_member]
+ALTER TABLE [employee_member]  WITH CHECK ADD  CONSTRAINT [FK_employee_member_employee] FOREIGN KEY([employee_id])
+REFERENCES [employee] ([id])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+ALTER TABLE [employee_member] CHECK CONSTRAINT [FK_employee_member_employee]
+ALTER TABLE [employee_member]  WITH CHECK ADD  CONSTRAINT [FK_employee_member_member] FOREIGN KEY([member_name])
+REFERENCES [member] ([name])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+ALTER TABLE [employee_member] CHECK CONSTRAINT [FK_employee_member_member]
+ALTER TABLE [buddy]  WITH CHECK ADD  CONSTRAINT [FK_buddy_member] FOREIGN KEY([self_member_name])
+REFERENCES [member] ([name])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+ALTER TABLE [buddy] CHECK CONSTRAINT [FK_buddy_member]
+ALTER TABLE [client_timecode]  WITH CHECK ADD  CONSTRAINT [FK_client_timecode_client] FOREIGN KEY([client_name])
+REFERENCES [client] ([name])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+ALTER TABLE [client_timecode] CHECK CONSTRAINT [FK_client_timecode_client]
+ALTER TABLE [client_timecode]  WITH CHECK ADD  CONSTRAINT [FK_client_timecode_timecode] FOREIGN KEY([timecode_code])
+REFERENCES [timecode] ([code])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+ALTER TABLE [client_timecode] CHECK CONSTRAINT [FK_client_timecode_timecode]
+ALTER TABLE [employee_timecode]  WITH CHECK ADD  CONSTRAINT [FK_employee_timecode_employee] FOREIGN KEY([employee_id])
+REFERENCES [employee] ([id])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+ALTER TABLE [employee_timecode] CHECK CONSTRAINT [FK_employee_timecode_employee]
+ALTER TABLE [employee_timecode]  WITH CHECK ADD  CONSTRAINT [FK_employee_timecode_timecode] FOREIGN KEY([timecode_code])
+REFERENCES [timecode] ([code])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+ALTER TABLE [employee_timecode] CHECK CONSTRAINT [FK_employee_timecode_timecode]
+ALTER TABLE [employee_hour]  WITH CHECK ADD  CONSTRAINT [FK_employee_hour_client] FOREIGN KEY([client_name])
+REFERENCES [client] ([name])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+ALTER TABLE [employee_hour] CHECK CONSTRAINT [FK_employee_hour_client]
+ALTER TABLE [employee_hour]  WITH CHECK ADD  CONSTRAINT [FK_employee_hour_employee] FOREIGN KEY([employee_id])
+REFERENCES [employee] ([id])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+ALTER TABLE [employee_hour] CHECK CONSTRAINT [FK_employee_hour_employee]
+ALTER TABLE [client_hour]  WITH CHECK ADD  CONSTRAINT [FK_client_hour_client] FOREIGN KEY([client_name])
+REFERENCES [client] ([name])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+ALTER TABLE [client_hour] CHECK CONSTRAINT [FK_client_hour_client]
+ALTER TABLE [client]  WITH CHECK ADD  CONSTRAINT [FK_client_group] FOREIGN KEY([group_id])
+REFERENCES [groups] ([id])
+ALTER TABLE [client] CHECK CONSTRAINT [FK_client_group]</Value>
+    </Setting>
+    <Setting Name="mastercafeConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=.\SQLEXPRESS;Initial Catalog=mastercafedb;MultipleActiveResultSets=True;Trusted_Connection =True;&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=.\SQLEXPRESS;Initial Catalog=mastercafedb;MultipleActiveResultSets=True;Trusted_Connection =True;</Value>
+    </Setting>
+    <Setting Name="databasecreateConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=.\SQLEXPRESS;MultipleActiveResultSets=True;Trusted_Connection =True;&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=.\SQLEXPRESS;MultipleActiveResultSets=True;Trusted_Connection =True;</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
