@@ -23,3 +23,4 @@ D:\MC\Server\obj\Debug\Server.exe.manifest
 D:\MC\Server\obj\Debug\Server.application
 D:\MC\Server\obj\Debug\Server.exe
 D:\MC\Server\obj\Debug\Server.pdb
+D:\MC\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache

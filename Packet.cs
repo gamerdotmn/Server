@@ -75,6 +75,7 @@ namespace Server
     public class PacketServerMonitorSyn
     {
         public string command = "syn";
+        public DateTime now;
     }
 
     public class PacketServerClientAdminLogoutok
@@ -166,24 +167,5 @@ namespace Server
     public class PacketServerClientTimecodeLogoutok
     {
         public string command = "memberlogoutok";
-    }
-
-    public class PacketMonitorServerLogin
-    {
-        public string command = "login";
-        public string name;
-        public string password;
-    }
-
-    public class PacketServerMonitorLoginok
-    {
-        public string command="loginok";
-        public string name;
-        public bool isadmin;
-    }
-
-    public class PacketServerMonitorLoginfailed
-    {
-        public string command="loginfailed";
     }
 }

@@ -120,9 +120,8 @@ namespace Server
                         System.Environment.Exit(0);
                     }
                 }
-                var cfgs = dcm.configs;
-                Program.log.Info("Config count, "+cfgs.Count());
-                if (cfgs.Count() > 0)
+                Program.log.Info("Config count, "+dcm.configs.Count());
+                if (dcm.configs.Count() > 0)
                 {
                     if (dcm.groups.Count() == 0)
                     {
@@ -165,7 +164,7 @@ namespace Server
                         item i2 = new item();
                         i2.id = Guid.NewGuid();
                         i2.name = "Бургер";
-                        i2.category_id = c1.id;
+                        i2.category_id = c2.id;
                         i2.price = 100;
                         dcm.items.InsertOnSubmit(i2);
 
@@ -182,40 +181,50 @@ namespace Server
                         dcm.SubmitChanges();
                     }
                     
-                    cfg.org_id = cfgs.FirstOrDefault().org_id;
-                    cfg.org_email = cfgs.FirstOrDefault().org_email;
-                    cfg.org_name = cfgs.FirstOrDefault().org_name;
-                    cfg.org_phone = cfgs.FirstOrDefault().org_phone;
-                    cfg.newmember_price = cfgs.FirstOrDefault().newmember_price;
-                    cfg.newmember_stock = cfgs.FirstOrDefault().newmember_stock;
-                    cfg.close_hour = cfgs.FirstOrDefault().close_hour;
-                    cfg.alert_minute = cfgs.FirstOrDefault().alert_minute;
-                    cfg.alert_message = cfgs.FirstOrDefault().alert_message;
-                    cfg.idle_minute = cfgs.FirstOrDefault().idle_minute;
-                    
+                    cfg.org_id = dcm.configs.FirstOrDefault().org_id;
+                    cfg.org_email = dcm.configs.FirstOrDefault().org_email;
+                    cfg.org_name = dcm.configs.FirstOrDefault().org_name;
+                    cfg.org_phone = dcm.configs.FirstOrDefault().org_phone;
+                    cfg.newmember_price = dcm.configs.FirstOrDefault().newmember_price;
+                    cfg.newmember_stock = dcm.configs.FirstOrDefault().newmember_stock;
+                    cfg.close_hour = dcm.configs.FirstOrDefault().close_hour;
+                    cfg.alert_minute = dcm.configs.FirstOrDefault().alert_minute;
+                    cfg.alert_message = dcm.configs.FirstOrDefault().alert_message;
+                    cfg.idle_minute = dcm.configs.FirstOrDefault().idle_minute;
+                    bool saveit = false;
                     if (cfg.newmember_price == null)
                     {
-                        cfg.newmember_price = 5000;
+                        dcm.configs.FirstOrDefault().newmember_price=cfg.newmember_price = 5000;
+                        saveit = true;
                     }
                     if (cfg.newmember_stock == null)
                     {
-                        cfg.newmember_stock = 600;
+                        dcm.configs.FirstOrDefault().newmember_stock=cfg.newmember_stock = 600;
+                        saveit = true;
                     }
                     if (cfg.close_hour == null)
                     {
-                        cfg.close_hour = 4;
+                        dcm.configs.FirstOrDefault().close_hour=cfg.close_hour = 9;
+                        saveit = true;
                     }
                     if (cfg.alert_minute == null)
                     {
-                        cfg.alert_minute = 5;
+                        dcm.configs.FirstOrDefault().alert_minute=cfg.alert_minute = 5;
+                        saveit = true;
                     }
                     if (cfg.alert_message == null)
                     {
-                        cfg.alert_message = "Таны цаг дуусах гэж байна.";
+                        dcm.configs.FirstOrDefault().alert_message=cfg.alert_message = "Таны цаг дуусах гэж байна.";
+                        saveit = true;
                     }
                     if (cfg.idle_minute == null)
                     {
-                        cfg.idle_minute = 5;
+                        dcm.configs.FirstOrDefault().idle_minute=cfg.idle_minute = 5;
+                        saveit = true;
+                    }
+                    if (saveit == true)
+                    {
+                        dcm.SubmitChanges();
                     }
                 }
 
@@ -469,16 +478,6 @@ namespace Server
             status();
         }
 
-        private void monitor_open(string name)
-        {
-            using(DataContext_mastercafe dcm=new DataContext_mastercafe(Program.constr))
-            {
-                client cl = dcm.clients.Where(_c => _c.name == name).FirstOrDefault();
-                cl.status = 7;
-                dcm.SubmitChanges();
-                Send(cl.ip, Program.port_servertoclient, "<mastercafe><cmd>open</cmd><startt>"+DateTime.Now.ToString("yyyy.MM.dd HH:mm:ss")+"</startt><minute>0</minute></mastercafe>");
-            }
-        }
 
         private void monitor_syn(string ip)
         {
@@ -504,31 +503,9 @@ namespace Server
             switch (cmd)
             {
                 case "syn": monitor_syn(ip); break;
-                case "login": monitor_login(Newtonsoft.Json.JsonConvert.DeserializeObject<PacketMonitorServerLogin>(data),ip); break;
                 default: break;
             }
             
-        }
-
-        private void monitor_login(PacketMonitorServerLogin packet, string ip)
-        {
-            using (DataContext_mastercafe dcm = new DataContext_mastercafe(Program.constr))
-            {
-                var emps = (from e in dcm.employees where e.name.ToLower() == packet.name.ToLower() && e.password.ToLower() == packet.password.ToLower() select new { e.name,e.isadmin });
-                int cnt = emps.Count();
-                if (cnt == 1)
-                {
-                    PacketServerMonitorLoginok packetloginok = new PacketServerMonitorLoginok();
-                    packetloginok.isadmin = emps.FirstOrDefault().isadmin;
-                    packetloginok.name = emps.FirstOrDefault().name;
-                    Send(ip, Program.port_servertomonitor, Newtonsoft.Json.JsonConvert.SerializeObject(packetloginok));
-                }
-                else
-                {
-                    PacketServerMonitorLoginfailed packetloginfailed = new PacketServerMonitorLoginfailed();
-                    Send(ip, Program.port_servertomonitor, Newtonsoft.Json.JsonConvert.SerializeObject(packetloginfailed));
-                }
-            }
         }
 
         private void client_syn(PacketClientServerSyn packet,string ip)
@@ -995,6 +972,7 @@ namespace Server
                 {
                     monitors[mos[i]] = c;
                     PacketServerMonitorSyn packet = new PacketServerMonitorSyn();
+                    packet.now = DateTime.Now;
                     Send(mos[i], Program.port_servertomonitor, Newtonsoft.Json.JsonConvert.SerializeObject(packet));
                 }
             });
