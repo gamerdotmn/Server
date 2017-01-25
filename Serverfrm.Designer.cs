@@ -34,6 +34,7 @@
             this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menu_backup = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_restore = new System.Windows.Forms.ToolStripMenuItem();
+            this.menu_showhide = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_close = new System.Windows.Forms.ToolStripMenuItem();
             this.userControl_monitor = new Server.UserControl_monitor();
             this.contextMenuStrip.SuspendLayout();
@@ -45,17 +46,19 @@
             this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
             this.notifyIcon.Text = "MasterCafe";
             this.notifyIcon.Visible = true;
-            this.notifyIcon.DoubleClick += new System.EventHandler(this.notifyIcon_DoubleClick);
+            this.notifyIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_click);
             // 
             // contextMenuStrip
             // 
             this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menu_backup,
             this.menu_restore,
+            this.menu_showhide,
             this.menu_close});
             this.contextMenuStrip.Name = "contextMenuStrip";
             this.contextMenuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.contextMenuStrip.Size = new System.Drawing.Size(207, 70);
+            this.contextMenuStrip.Size = new System.Drawing.Size(207, 114);
+            this.contextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip_Opening);
             // 
             // menu_backup
             // 
@@ -70,6 +73,12 @@
             this.menu_restore.Size = new System.Drawing.Size(206, 22);
             this.menu_restore.Text = "Өгөгдлийн сан сэргээх";
             this.menu_restore.Click += new System.EventHandler(this.menu_restoreclick);
+            // 
+            // menu_showhide
+            // 
+            this.menu_showhide.Name = "menu_showhide";
+            this.menu_showhide.Size = new System.Drawing.Size(206, 22);
+            this.menu_showhide.Click += new System.EventHandler(this.menu_showhide_Click);
             // 
             // menu_close
             // 
@@ -97,6 +106,7 @@
             this.ContextMenuStrip = this.contextMenuStrip;
             this.Controls.Add(this.userControl_monitor);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -117,5 +127,6 @@
         private UserControl_monitor userControl_monitor;
         private System.Windows.Forms.ToolStripMenuItem menu_backup;
         private System.Windows.Forms.ToolStripMenuItem menu_restore;
+        private System.Windows.Forms.ToolStripMenuItem menu_showhide;
     }
 }

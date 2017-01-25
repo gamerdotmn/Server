@@ -24,8 +24,7 @@ namespace Server
 
         private void DoLogin()
         {
-            
-            if (textBox_password.Text == aemp.password)
+            if (Program.Compress(textBox_password.Text.ToLower()) == aemp.password)
             {
                 ok = true;
                 this.Close();

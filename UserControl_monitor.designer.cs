@@ -290,7 +290,7 @@
             this.labelSNETI_.Name = "labelSNETI_";
             this.labelSNETI_.Size = new System.Drawing.Size(224, 16);
             this.labelSNETI_.TabIndex = 58;
-            this.labelSNETI_.Text = "Server network input";
+            this.labelSNETI_.Text = "Server input";
             // 
             // labelSNETO_
             // 
@@ -300,7 +300,7 @@
             this.labelSNETO_.Name = "labelSNETO_";
             this.labelSNETO_.Size = new System.Drawing.Size(242, 16);
             this.labelSNETO_.TabIndex = 57;
-            this.labelSNETO_.Text = "Server network output";
+            this.labelSNETO_.Text = "Server output";
             // 
             // timer
             // 

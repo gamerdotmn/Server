@@ -1045,32 +1045,14 @@ namespace Server
             e.Cancel = true;
             this.WindowState = FormWindowState.Minimized;
             this.ShowInTaskbar = false;
+            menu_showhide.Text = "Нээх";
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             notifyIcon.BalloonTipIcon = ToolTipIcon.Info;
             notifyIcon.BalloonTipText = "Сервер ажиллаж байна.";
             notifyIcon.BalloonTipTitle = "MasterCafe";
             notifyIcon.ShowBalloonTip(50);
         }
-
-        private void notifyIcon_DoubleClick(object sender, EventArgs e)
-        {
-            if (this.WindowState == FormWindowState.Minimized)
-            {
-                this.WindowState = FormWindowState.Normal;
-                this.ShowInTaskbar = true;
-                this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
-                System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Serverfrm));
-                this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-                this.ShowIcon = true;
-            }
-            else
-            {
-                this.WindowState = FormWindowState.Minimized;
-                this.ShowInTaskbar = false;
-                this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            }
-        }
-
+        
         private void Send(string clientip, int port, string message)
         {
             string[] param = new string[3];
@@ -1173,31 +1155,30 @@ namespace Server
             login.ShowDialog(this);
             if (login.ok)
             {
-                if (System.IO.Directory.Exists(@"C:\mc") == false)
+                System.Windows.Forms.SaveFileDialog savef = new SaveFileDialog();
+                savef.FileName = "mastercafedb";
+                DialogResult result=savef.ShowDialog(this);
+                if (savef.FileName != "mastercafedb")
                 {
-                    System.IO.Directory.CreateDirectory(@"C:\mc");
-                }
-                if (System.IO.Directory.Exists(@"C:\mc\server") == false)
-                {
-                    System.IO.Directory.CreateDirectory(@"C:\mc\server");
-                }
-                try
-                {
-                    SqlConnection con = new SqlConnection(Program.constr);
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand("BACKUP DATABASE [mastercafedb] TO DISK = N'C:\\mc\\server\\mastercafedb' WITH NOFORMAT, INIT,  NAME = N'mastercafedb-Full Database Backup', SKIP, NOREWIND, NOUNLOAD,  STATS = 10;", con);
-                    cmd.ExecuteNonQuery();
-                    con.Close();
-                    MessageBox.Show("Өгөгдлийн сан амжилттай нөөцөлсөн.", "Анхаар", MessageBoxButtons.OK);
-                    Program.log.Info("Backup database complete.");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Алдаа гарсан.", "Анхаар", MessageBoxButtons.OK);
-                    Program.log.Error(ex);
+                    try
+                    {
+                        SqlConnection con = new SqlConnection(Program.constr);
+                        con.Open();
+                        SqlCommand cmd = new SqlCommand("BACKUP DATABASE [mastercafedb] TO DISK = N'"+savef.FileName+"' WITH NOFORMAT, INIT,  NAME = N'mastercafedb-Full Database Backup', SKIP, NOREWIND, NOUNLOAD,  STATS = 10;", con);
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                        MessageBox.Show("Өгөгдлийн сан амжилттай нөөцөлсөн.", "Анхаар", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                        Program.log.Info("Backup database complete. "+savef.FileName);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Алдаа гарсан.", "Анхаар", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                        Program.log.Error(ex);
+                    }
                 }
             }
         }
+
 
         private void menu_restoreclick(object sender, EventArgs e)
         {
@@ -1205,38 +1186,58 @@ namespace Server
             login.ShowDialog(this);
             if (login.ok)
             {
-                if (System.IO.Directory.Exists(@"C:\mc") == false)
+                System.Windows.Forms.OpenFileDialog openf = new OpenFileDialog();
+                openf.ShowDialog(this);
+            }
+        }
+
+        private void menu_showhide_Click(object sender, EventArgs e)
+        {
+            if (WindowState==FormWindowState.Minimized)
+            {
+                this.WindowState = FormWindowState.Normal;
+                this.ShowInTaskbar = true;
+                this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Minimized;
+                this.ShowInTaskbar = false;
+                this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            }
+        }
+
+        private void notifyIcon_click(object sender, MouseEventArgs e)
+        {
+            if (e.Button != System.Windows.Forms.MouseButtons.Right)
+            {
+                if (this.WindowState == FormWindowState.Minimized)
                 {
-                    System.IO.Directory.CreateDirectory(@"C:\mc");
+                    this.WindowState = FormWindowState.Normal;
+                    this.ShowInTaskbar = true;
+                    this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
+                    System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Serverfrm));
+                    this.ShowIcon = true;
                 }
-                if (System.IO.Directory.Exists(@"C:\mc\server") == false)
+                else
                 {
-                    System.IO.Directory.CreateDirectory(@"C:\mc\server");
-                }
-                try
-                {
-                    SqlConnection con = new SqlConnection(Program.constr);
-                    con.Open();
-                    SqlCommand cmd0 = new SqlCommand("USE master;", con);
-                    cmd0.ExecuteNonQuery();
-                    SqlCommand cmd1 = new SqlCommand("ALTER DATABASE mastercafedb SET SINGLE_USER WITH ROLLBACK IMMEDIATE;", con);
-                    cmd1.ExecuteNonQuery();
-                    SqlCommand cmd2 = new SqlCommand("RESTORE DATABASE [mastercafedb] FROM  DISK = N'C:\\mc\\server\\mastercafedb' WITH  FILE = 1,  NOUNLOAD,  REPLACE,  STATS = 10;", con);
-                    cmd2.ExecuteNonQuery();
-                    SqlCommand cmd3 = new SqlCommand("ALTER DATABASE mastercafedb SET MULTI_USER;", con);
-                    cmd3.ExecuteNonQuery();
-                    con.Close();
-                    MessageBox.Show("Өгөгдлийн сан амжилттай сэргээсэн.", "Анхаар", MessageBoxButtons.OK);
-                    Program.log.Info("Restore database complete.");
-                    System.Environment.Exit(0);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Алдаа гарсан", "Анхаар", MessageBoxButtons.OK);
-                    Program.log.Error(ex);
+                    this.WindowState = FormWindowState.Minimized;
+                    this.ShowInTaskbar = false;
+                    this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
                 }
             }
         }
 
+        private void contextMenuStrip_Opening(object sender, CancelEventArgs e)
+        {
+            if (WindowState == FormWindowState.Minimized)
+            {
+                menu_showhide.Text = "Нээх";
+            }
+            else
+            {
+                menu_showhide.Text = "Нуух";
+            }
+        }
     }
 }

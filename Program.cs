@@ -28,7 +28,32 @@ namespace Server
         public static int port_monitortoserver = 40004;
         public static int port_broadcast = 40006;
         public static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        public static string constr = @"Data Source=.\MASTERCAFE;Initial Catalog=mastercafedb;Persist Security Info=True;User ID=sa;Password=pldifvzz7x;MultipleActiveResultSets=True";
+        public static string constr = @"Data Source=.\MASTERCAFE;Initial Catalog=mastercafedb;Persist Security Info=True;User ID=sa;Password=pldifvzz7x;MultipleActiveResultSets=True;";
+
+        public static void restoredb(string path)
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection(Program.constr);
+                con.Open();
+                SqlCommand cmd0 = new SqlCommand("USE master;", con);
+                cmd0.ExecuteNonQuery();
+                SqlCommand cmd1 = new SqlCommand("ALTER DATABASE mastercafedb SET SINGLE_USER WITH ROLLBACK IMMEDIATE;", con);
+                cmd1.ExecuteNonQuery();
+                SqlCommand cmd2 = new SqlCommand("RESTORE DATABASE [mastercafedb] FROM  DISK = N'"+path+"' WITH  FILE = 1,  NOUNLOAD,  REPLACE,  STATS = 10;", con);
+                cmd2.ExecuteNonQuery();
+                SqlCommand cmd3 = new SqlCommand("ALTER DATABASE mastercafedb SET MULTI_USER;", con);
+                cmd3.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("Өгөгдлийн сан амжилттай сэргээсэн.", "Анхаар", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Program.log.Info("Restore database complete.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Алдаа гарсан", "Анхаар", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Program.log.Error(ex);
+            }
+        }
 
         public static string Compress(string text)
         {
@@ -72,12 +97,20 @@ namespace Server
         }
 
         [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
             string configFile = System.AppDomain.CurrentDomain.BaseDirectory + "log4net.config";
             log4net.Config.XmlConfigurator.Configure(new FileInfo(configFile));
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            if (args.Length > 0)
+            {
+                if(args[0].IndexOf("-restore=")>-1)
+                {
+                    string restorepath = args[0].Substring("-restore=".Length, args[0].Length - "-restore=".Length);
+                    restoredb(restorepath);
+                }
+            }
             Application.Run(new Serverfrm());
         }
     }
