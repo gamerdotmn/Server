@@ -43,7 +43,7 @@
             // 
             this.notifyIcon.ContextMenuStrip = this.contextMenuStrip;
             this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
-            this.notifyIcon.Text = "Холбогдсон клиент: 0 Холбогдсон бусад: 0";
+            this.notifyIcon.Text = "MasterCafe";
             this.notifyIcon.Visible = true;
             this.notifyIcon.DoubleClick += new System.EventHandler(this.notifyIcon_DoubleClick);
             // 
@@ -55,7 +55,7 @@
             this.menu_close});
             this.contextMenuStrip.Name = "contextMenuStrip";
             this.contextMenuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.contextMenuStrip.Size = new System.Drawing.Size(207, 92);
+            this.contextMenuStrip.Size = new System.Drawing.Size(207, 70);
             // 
             // menu_backup
             // 

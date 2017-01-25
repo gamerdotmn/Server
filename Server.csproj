@@ -166,7 +166,6 @@
     <EmbeddedResource Include="UserControl_monitor.resx">
       <DependentUpon>UserControl_monitor.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="app.config" />
     <None Include="DataClasses_mastercafe.dbml.layout">
       <DependentUpon>DataClasses_mastercafe.dbml</DependentUpon>
     </None>

@@ -1,4 +1,3 @@
-D:\MC\Server\bin\Debug\Server.exe.config
 D:\MC\Server\bin\Debug\log4net.config
 D:\MC\Server\bin\Debug\Server.exe.manifest
 D:\MC\Server\bin\Debug\Server.application

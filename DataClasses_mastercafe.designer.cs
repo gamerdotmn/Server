@@ -78,7 +78,7 @@ namespace Server
     #endregion
 		
 		public DataContext_mastercafe() : 
-				base(global::Server.Properties.Settings.Default.mastercafedbConnectionString1, mappingSource)
+				base(Program.constr, mappingSource)
 		{
 			OnCreated();
 		}

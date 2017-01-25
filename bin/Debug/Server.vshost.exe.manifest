@@ -67,26 +67,17 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Server.exe" size="917504">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Server.exe" size="916480">
       <assemblyIdentity name="Server" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>AA4ky8qh54HJlVq4frVZBgITkfM=</dsig:DigestValue>
+        <dsig:DigestValue>HfPbuQLmAEzjn+MWDmWV0Rj1E5Q=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Server.exe.config" size="652">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>A0tcUaJnk8rRHZ4VytnIUq1KL9c=</dsig:DigestValue>
-    </hash>
-  </file>
   <file name="Server.ico" size="191841">
     <hash>
       <dsig:Transforms>

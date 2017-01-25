@@ -300,9 +300,9 @@ namespace Server
             speed_timer.Start();
             Task.Factory.StartNew(() => speedtest());
             notifyIcon.BalloonTipIcon = ToolTipIcon.Info;
-            notifyIcon.BalloonTipText = "Сервер эхэлсэн байна.";
+            notifyIcon.BalloonTipText = "Сервер амжилттай эхэлсэн.";
             notifyIcon.BalloonTipTitle = "MasterCafe";
-            notifyIcon.ShowBalloonTip(500);
+            notifyIcon.ShowBalloonTip(50);
         }
 
         
@@ -1046,6 +1046,10 @@ namespace Server
             this.WindowState = FormWindowState.Minimized;
             this.ShowInTaskbar = false;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            notifyIcon.BalloonTipIcon = ToolTipIcon.Info;
+            notifyIcon.BalloonTipText = "Сервер ажиллаж байна.";
+            notifyIcon.BalloonTipTitle = "MasterCafe";
+            notifyIcon.ShowBalloonTip(50);
         }
 
         private void notifyIcon_DoubleClick(object sender, EventArgs e)
