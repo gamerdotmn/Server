@@ -86,7 +86,7 @@
             // labelerr
             // 
             this.labelerr.AutoSize = true;
-            this.labelerr.ForeColor = System.Drawing.Color.Red;
+            this.labelerr.ForeColor = System.Drawing.Color.Black;
             this.labelerr.Location = new System.Drawing.Point(30, 137);
             this.labelerr.Name = "labelerr";
             this.labelerr.Size = new System.Drawing.Size(0, 13);

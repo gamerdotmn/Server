@@ -47,6 +47,7 @@ namespace Server
 
         public Serverfrm()
         {
+            Thread.Sleep(1000);
             RegistryKey register = Registry.CurrentUser.OpenSubKey("SOFTWARE\\MCSERVER", true);
             if (register == null)
             {
@@ -1156,9 +1157,9 @@ namespace Server
             if (login.ok)
             {
                 System.Windows.Forms.SaveFileDialog savef = new SaveFileDialog();
-                savef.FileName = "mastercafedb";
-                DialogResult result=savef.ShowDialog(this);
-                if (savef.FileName != "mastercafedb")
+                savef.FileName = "mastercafedb.db";
+                savef.Filter = "Database|*.db";
+                if (savef.ShowDialog(this) == DialogResult.OK)
                 {
                     try
                     {
@@ -1187,7 +1188,12 @@ namespace Server
             if (login.ok)
             {
                 System.Windows.Forms.OpenFileDialog openf = new OpenFileDialog();
-                openf.ShowDialog(this);
+                openf.Filter = "Database|*.db";
+                if (openf.ShowDialog(this) == DialogResult.OK)
+                {
+                    System.Diagnostics.Process.Start(Application.ExecutablePath,"-restore=\"" + openf.FileName + "\"");
+                    System.Environment.Exit(0);
+                }
             }
         }
 
