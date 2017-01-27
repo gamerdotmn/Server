@@ -4,6 +4,11 @@ using System.Text;
 
 namespace Server
 {
+    public class server
+    {
+        public string name;
+        public string org;
+    }
     public class gconfig
     {
         public bool load = false;
@@ -25,6 +30,42 @@ namespace Server
         public bool prepairhour;
         public int minprice;
     }
+
+    public class PacketServerMonitorSyn
+    {
+        public string command = "syn";
+        public DateTime now;
+    }
+
+    public class PacketMonitorServerLogin
+    {
+        public string command = "login";
+        public string name;
+    }
+
+    public class PacketServerMonitorLoginok
+    {
+        public string command = "loginok";
+        public string name;
+        public bool isadmin;
+    }
+
+    public class PacketServerMonitorLoginfailed
+    {
+        public string command = "loginfailed";
+    }
+
+    public class PacketMonitorServerLogout
+    {
+        public string command = "logout";
+        public string name;
+    }
+
+    public class PacketServerMonitorLogoutok
+    {
+        public string command = "logoutok";
+    }
+
 
     public class Packet
     {
@@ -70,12 +111,6 @@ namespace Server
     public class PacketServerClientSyn
     {
         public string command = "syn";
-    }
-
-    public class PacketServerMonitorSyn
-    {
-        public string command = "syn";
-        public DateTime now;
     }
 
     public class PacketServerClientAdminLogoutok

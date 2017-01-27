@@ -13,7 +13,6 @@ using System.Net.NetworkInformation;
 using System.Threading.Tasks;
 using System.Threading;
 using System.Timers;
-using System.Xml;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 using System.Web;
@@ -24,6 +23,7 @@ using System.Data.Linq;
 using System.Linq;
 using System.Data.SqlClient;
 using System.Reflection;
+using System.Xml;
 using System.Resources;
 
 namespace Server
@@ -57,7 +57,7 @@ namespace Server
             register.Close();
             try
             {
-                UdpClient listener1 = new UdpClient(Program.port_clienttoserver);
+                UdpClient listener1 = new UdpClient(Program.port_clienttoserver1);
                 listener1.Close();
                 UdpClient listener2 = new UdpClient(Program.port_monitortoserver);
                 listener2.Close();
@@ -229,6 +229,11 @@ namespace Server
                     }
                 }
 
+                foreach (employee emp in dcm.employees)
+                {
+                    emp.connected = false;
+                }
+
                 foreach (client cli in dcm.clients)
                 {
                     if (cli.status==1)
@@ -285,7 +290,7 @@ namespace Server
 
             InitializeComponent();
             status();
-            Task.Factory.StartNew(() => client_listen());
+            Task.Factory.StartNew(() => client_listen1());
             Task.Factory.StartNew(() => monitor_listen());
             broadcast_timer = new System.Timers.Timer(1000);
             broadcast_timer.Elapsed +=new ElapsedEventHandler(broadcast_timerealpsed);
@@ -376,38 +381,6 @@ namespace Server
             status();
         }
 
-        private void client_status(string ip,XmlDocument xd)
-        {
-            string name = xd.ChildNodes[0].ChildNodes[1].InnerText;
-            string mac = xd.ChildNodes[0].ChildNodes[2].InnerText;
-            string member_name = xd.ChildNodes[0].ChildNodes[3].InnerText;
-            string usedtime = xd.ChildNodes[0].ChildNodes[4].InnerText;
-            string remainminute = xd.ChildNodes[0].ChildNodes[5].InnerText;
-            string money = xd.ChildNodes[0].ChildNodes[6].InnerText;
-            string startt = xd.ChildNodes[0].ChildNodes[7].InnerText;
-            string app = xd.ChildNodes[0].ChildNodes[8].InnerText;
-            string title = xd.ChildNodes[0].ChildNodes[9].InnerText;
-            string tc = xd.ChildNodes[0].ChildNodes[10].InnerText;
-            string ht = xd.ChildNodes[0].ChildNodes[11].InnerText;
-            int status = Convert.ToInt32(xd.ChildNodes[0].ChildNodes[12].InnerText);
-            using (DataContext_mastercafe dcm = new DataContext_mastercafe(Program.constr))
-            {
-                client cl = dcm.clients.Where(_c => _c.name == name).FirstOrDefault();
-                cl.app = app;
-                cl.group_id = dcm.groups.FirstOrDefault().id;
-                cl.ht = Guid.Parse(ht);
-                cl.ip = ip;
-                cl.mac = mac;
-                cl.member_name = member_name;
-                cl.remainminute = Convert.ToInt32(remainminute);
-                cl.start = DateTime.ParseExact(startt, "yyyy.MM.dd HH:mm:ss", null);
-                cl.status = status;
-                cl.tc = tc;
-                cl.title = title;
-                cl.usedminute = Convert.ToInt32(usedtime);
-                dcm.SubmitChanges();
-            }
-        }
 
         private void client_disconnect(string ip)
         {
@@ -493,6 +466,40 @@ namespace Server
             }
         }
 
+        private void monitor_login(PacketMonitorServerLogin packet,string ip)
+        {
+            using (DataContext_mastercafe dcm = new DataContext_mastercafe(Program.constr))
+            {
+                if (dcm.employees.Where(c => c.connected==true).Count() == 0)
+                {
+                    var emp=dcm.employees.Where(c => c.name == packet.name).FirstOrDefault();
+                    emp.connected = true;
+                    dcm.SubmitChanges();
+                    PacketServerMonitorLoginok packetok = new PacketServerMonitorLoginok();
+                    packetok.name = emp.name;
+                    packetok.isadmin = emp.isadmin;
+                    Send(ip, Program.port_servertomonitor, Newtonsoft.Json.JsonConvert.SerializeObject(packetok));
+                }
+                else
+                {
+                    PacketServerMonitorLoginfailed packedfailed = new PacketServerMonitorLoginfailed();
+                    Send(ip, Program.port_servertomonitor, Newtonsoft.Json.JsonConvert.SerializeObject(packedfailed));
+                }
+            }
+        }
+
+        private void monitor_logout(PacketMonitorServerLogout packet, string ip)
+        {
+            using (DataContext_mastercafe dcm = new DataContext_mastercafe(Program.constr))
+            {
+                var emp = dcm.employees.Where(c => c.name == packet.name).FirstOrDefault();
+                emp.connected = false;
+                dcm.SubmitChanges();
+                PacketServerMonitorLogoutok packetlogoutok = new PacketServerMonitorLogoutok();
+                Send(ip, Program.port_servertomonitor, Newtonsoft.Json.JsonConvert.SerializeObject(packetlogoutok));
+            }
+        }
+
         private void monitor_management(string ip, string data)
         {
             if (data.Length == 0)
@@ -504,6 +511,8 @@ namespace Server
             switch (cmd)
             {
                 case "syn": monitor_syn(ip); break;
+                case "login": monitor_login(Newtonsoft.Json.JsonConvert.DeserializeObject<PacketMonitorServerLogin>(data), ip); break;
+                case "logout": monitor_logout(Newtonsoft.Json.JsonConvert.DeserializeObject<PacketMonitorServerLogout>(data), ip); break;
                 default: break;
             }
             
@@ -904,10 +913,10 @@ namespace Server
             //monitor_udp.Close();
         }
 
-        private void client_listen()
+        private void client_listen1()
         {
-            UdpClient client_udp = new UdpClient(Program.port_clienttoserver);
-            IPEndPoint ipep = new IPEndPoint(IPAddress.Any, Program.port_clienttoserver);
+            UdpClient client_udp = new UdpClient(Program.port_clienttoserver1);
+            IPEndPoint ipep = new IPEndPoint(IPAddress.Any, Program.port_clienttoserver1);
             while (true)
             {
                 try
@@ -1021,6 +1030,17 @@ namespace Server
 
         private void monitor_disconnect(string ip)
         {
+            if (monitors.Count == 0)
+            {
+                using (DataContext_mastercafe dcm = new DataContext_mastercafe(Program.constr))
+                {
+                    foreach (employee emp in dcm.employees)
+                    {
+                        emp.connected = false;
+                    }
+                    dcm.SubmitChanges();
+                }
+            }
             status();
             Program.log.Info(ip + ", monitor disconnect.");
         }
