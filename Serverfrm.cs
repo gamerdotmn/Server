@@ -43,7 +43,6 @@ namespace Server
         private Hashtable monitors_packets = new Hashtable();
         public static config cfg = new config();
         public static gconfig gcfg = new gconfig();
-        public const string host = "gamer.mn";
 
         public Serverfrm()
         {
@@ -942,7 +941,10 @@ namespace Server
             {
                 IPHostEntry ipEntry = Dns.GetHostEntry(Dns.GetHostName());
                 IPAddress[] addr = ipEntry.AddressList;
-                string sdata = "<mastercafe><cmd>broadcast</cmd><name>" + SystemInformation.ComputerName +"/"+cfg.org_name+ "</name></mastercafe>";
+                server s = new server();
+                s.name = SystemInformation.ComputerName;
+                s.org = cfg.org_name;
+                string sdata = Newtonsoft.Json.JsonConvert.SerializeObject(s);
                 byte[] data = Encoding.UTF8.GetBytes(sdata);
                 Socket sock = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
                 sock.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.Broadcast, true);
@@ -1127,7 +1129,7 @@ namespace Server
             try
             {
                 WebClient wc = new WebClient();
-                gcfg = Newtonsoft.Json.JsonConvert.DeserializeObject<gconfig>(wc.DownloadString("http://" + host + "/api/version.php"));
+                gcfg = Newtonsoft.Json.JsonConvert.DeserializeObject<gconfig>(wc.DownloadString("http://" + Program.host + "/api/version.php"));
                 if (gcfg.load)
                 {
                     DataContext_mastercafe dcm = new DataContext_mastercafe(Program.constr);
@@ -1156,7 +1158,7 @@ namespace Server
                     }
                     int speed = (int)speeds.Average();
                     WebClient wclient = new WebClient();
-                    wclient.DownloadString("http://" + host + "/api/stats.php?license=" + cfg.org_id + "&speed=" + speed+"&wei="+wei+"&free="+free+"&vipfree="+vipfree);
+                    wclient.DownloadString("http://" + Program.host + "/api/stats.php?license=" + cfg.org_id + "&speed=" + speed+"&wei="+wei+"&free="+free+"&vipfree="+vipfree);
                 }
             }
             catch (Exception ex)

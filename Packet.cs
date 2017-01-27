@@ -9,6 +9,7 @@ namespace Server
         public string name;
         public string org;
     }
+
     public class gconfig
     {
         public bool load = false;
