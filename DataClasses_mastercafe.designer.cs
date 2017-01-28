@@ -66,9 +66,6 @@ namespace Server
     partial void Inserthourtemplate(hourtemplate instance);
     partial void Updatehourtemplate(hourtemplate instance);
     partial void Deletehourtemplate(hourtemplate instance);
-    partial void Insertiptable(iptable instance);
-    partial void Updateiptable(iptable instance);
-    partial void Deleteiptable(iptable instance);
     partial void Insertitem(item instance);
     partial void Updateitem(item instance);
     partial void Deleteitem(item instance);
@@ -206,14 +203,6 @@ namespace Server
 			}
 		}
 		
-		public System.Data.Linq.Table<iptable> iptables
-		{
-			get
-			{
-				return this.GetTable<iptable>();
-			}
-		}
-		
 		public System.Data.Linq.Table<item> items
 		{
 			get
@@ -235,6 +224,14 @@ namespace Server
 			get
 			{
 				return this.GetTable<reserve>();
+			}
+		}
+		
+		public System.Data.Linq.Table<iptable> iptables
+		{
+			get
+			{
+				return this.GetTable<iptable>();
 			}
 		}
 	}
@@ -3271,116 +3268,6 @@ namespace Server
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.iptables")]
-	public partial class iptable : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id;
-		
-		private string _ipbeg;
-		
-		private string _ipend;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    partial void OnipbegChanging(string value);
-    partial void OnipbegChanged();
-    partial void OnipendChanging(string value);
-    partial void OnipendChanged();
-    #endregion
-		
-		public iptable()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ipbeg", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
-		public string ipbeg
-		{
-			get
-			{
-				return this._ipbeg;
-			}
-			set
-			{
-				if ((this._ipbeg != value))
-				{
-					this.OnipbegChanging(value);
-					this.SendPropertyChanging();
-					this._ipbeg = value;
-					this.SendPropertyChanged("ipbeg");
-					this.OnipbegChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ipend", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
-		public string ipend
-		{
-			get
-			{
-				return this._ipend;
-			}
-			set
-			{
-				if ((this._ipend != value))
-				{
-					this.OnipendChanging(value);
-					this.SendPropertyChanging();
-					this._ipend = value;
-					this.SendPropertyChanged("ipend");
-					this.OnipendChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.item")]
 	public partial class item : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -3945,6 +3832,69 @@ namespace Server
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.iptables")]
+	public partial class iptable
+	{
+		
+		private int _id;
+		
+		private string _ipbeg;
+		
+		private string _ipend;
+		
+		public iptable()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this._id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ipbeg", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+		public string ipbeg
+		{
+			get
+			{
+				return this._ipbeg;
+			}
+			set
+			{
+				if ((this._ipbeg != value))
+				{
+					this._ipbeg = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ipend", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+		public string ipend
+		{
+			get
+			{
+				return this._ipend;
+			}
+			set
+			{
+				if ((this._ipend != value))
+				{
+					this._ipend = value;
+				}
 			}
 		}
 	}

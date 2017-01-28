@@ -107,6 +107,7 @@ namespace Server
         public string clientuser;
         public string clientpassword;
         public clientgroup group;
+        public int portid;
     }
 
     public class PacketServerClientSyn

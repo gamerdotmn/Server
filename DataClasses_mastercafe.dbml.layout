@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14.5, 15.875" name="DataClasses_member">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14.75, 15.875" name="DataClasses_member">
   <DataContextMoniker Name="/DataContext_mastercafe" />
   <nestedChildShapes>
     <classShape Id="6f3c4b82-fe62-4028-83ac-31022ea54b81" absoluteBounds="0.75, 1.75, 2, 1.1939925130208335">
@@ -74,12 +74,6 @@
         <elementListCompartment Id="e4dd86ff-6b10-4a9c-93c6-4f619eaa0722" absoluteBounds="3.765, 10.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="6abff68a-9452-40b7-a09e-e7676b2ce457" absoluteBounds="9.75, 11.75, 2, 1.3862939453124987">
-      <DataClassMoniker Name="/DataContext_mastercafe/iptable" />
-      <nestedChildShapes>
-        <elementListCompartment Id="411c220a-9e69-4ea0-8593-085ababd3b06" absoluteBounds="9.765, 12.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="ee9f20d3-07d7-4e45-82be-02f7456f4cb0" absoluteBounds="9.5, 9.125, 2, 1.5785953776041666">
       <DataClassMoniker Name="/DataContext_mastercafe/item" />
       <nestedChildShapes>
@@ -98,7 +92,7 @@
         <elementListCompartment Id="6f5a67a4-2be6-45df-9bd3-a547e03f8f7f" absoluteBounds="9.265, 5.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(1.75 : 6.1362939453125); (1.75 : 6.73000325520833); (5.57291666666667 : 6.73000325520833 : JumpStart); (5.73958333333333 : 6.73000325520833 : JumpEnd); (6.5 : 6.73000325520833)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(1.75 : 6.1362939453125); (1.75 : 6.73000325520833); (5.57291666666667 : 6.73000325520833 : JumpStart); (5.73958333333333 : 6.73000325520833 : JumpEnd); (6.5 : 6.73000325520833)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataContext_mastercafe/timecode/timecode_client" />
       <nodes>
         <classShapeMoniker Id="4ca38072-69bf-44fe-8658-6c1cd08ac3a2" />
@@ -112,14 +106,14 @@
         <classShapeMoniker Id="3668f839-0d77-4e8c-9903-3e9d7b924328" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.5 : 1.91429768880208); (9.25 : 1.91429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.5 : 1.91429768880208); (9.25 : 1.91429768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataContext_mastercafe/employee/employee_employee_hour" />
       <nodes>
         <classShapeMoniker Id="5c43feb0-2fb7-49d1-8dd7-cf76bb51fa72" />
         <classShapeMoniker Id="3668f839-0d77-4e8c-9903-3e9d7b924328" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.5 : 1.09375); (13.25 : 1.09375); (13.25 : 2.125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.5 : 1.09375); (13.25 : 1.09375); (13.25 : 2.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataContext_mastercafe/employee/employee_employee_member" />
       <nodes>
         <classShapeMoniker Id="5c43feb0-2fb7-49d1-8dd7-cf76bb51fa72" />
@@ -133,68 +127,74 @@
         <classShapeMoniker Id="a06140ce-e53a-4392-b1a4-7c7e10584b6c" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(6.5 : 1.53929768880208); (4.5 : 1.53929768880208); (4.5 : 4.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(6.5 : 1.53929768880208); (4.5 : 1.53929768880208); (4.5 : 4.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataContext_mastercafe/employee/employee_employee_timecode" />
       <nodes>
         <classShapeMoniker Id="5c43feb0-2fb7-49d1-8dd7-cf76bb51fa72" />
         <classShapeMoniker Id="8c27d15e-c683-44b4-8965-4f2d42a77fec" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 5.44314697265625); (3.5 : 5.44314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 5.44314697265625); (3.5 : 5.44314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataContext_mastercafe/timecode/timecode_employee_timecode" />
       <nodes>
         <classShapeMoniker Id="4ca38072-69bf-44fe-8658-6c1cd08ac3a2" />
         <classShapeMoniker Id="8c27d15e-c683-44b4-8965-4f2d42a77fec" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.75 : 15.1098046875); (6.59375 : 15.1098046875); (6.59375 : 7.12660970052083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.75 : 15.1098046875); (6.59375 : 15.1098046875); (6.59375 : 7.12660970052083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataContext_mastercafe/group/group_client" />
       <nodes>
         <classShapeMoniker Id="ce87f2e3-972e-4248-bc61-a68c4901fbad" />
         <classShapeMoniker Id="f4a9d6ec-d0a5-430c-aa42-128ad6e51b35" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.75 : 11.1594962565104); (6.5624975 : 11.1594962565104); (6.5624975 : 7.12660970052083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.75 : 11.1594962565104); (6.5624975 : 11.1594962565104); (6.5624975 : 7.12660970052083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataContext_mastercafe/hourtemplate/hourtemplate_client" />
       <nodes>
         <classShapeMoniker Id="805d6b81-df21-40d2-a848-497c7041ee3b" />
         <classShapeMoniker Id="f4a9d6ec-d0a5-430c-aa42-128ad6e51b35" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(11.40625 : 9.125); (11.40625 : 6.52329752604167); (12.25 : 6.52329752604167)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(11.40625 : 9.125); (11.40625 : 6.52329752604167); (12.25 : 6.52329752604167)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataContext_mastercafe/item/item_employee_sale" />
       <nodes>
         <classShapeMoniker Id="ee9f20d3-07d7-4e45-82be-02f7456f4cb0" />
         <classShapeMoniker Id="a06140ce-e53a-4392-b1a4-7c7e10584b6c" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.75 : 9.97199625651042); (9.5 : 9.97199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.75 : 9.97199625651042); (9.5 : 9.97199625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataContext_mastercafe/category/category_item" />
       <nodes>
         <classShapeMoniker Id="2dfbdbea-847d-4b40-ac7e-5d52f0a75115" />
         <classShapeMoniker Id="ee9f20d3-07d7-4e45-82be-02f7456f4cb0" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.75 : 8.53929768880208); (6.47916416666667 : 8.53929768880208 : JumpStart); (6.67708333333333 : 8.53929768880208 : JumpEnd); (7.5781275 : 8.53929768880208); (7.5781275 : 7.12660970052083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.75 : 8.53929768880208); (6.47916416666667 : 8.53929768880208 : JumpStart); (6.67708333333333 : 8.53929768880208 : JumpEnd); (7.5781275 : 8.53929768880208); (7.5781275 : 7.12660970052083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataContext_mastercafe/member/member_client" />
       <nodes>
         <classShapeMoniker Id="92ddaa4b-d6f6-4140-bf9f-89ed3bbd4189" />
         <classShapeMoniker Id="f4a9d6ec-d0a5-430c-aa42-128ad6e51b35" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.65625 : 7.75); (5.65625 : 3.44794840494792); (8.59371826171875 : 3.44794840494792 : JumpStart); (8.76038492838542 : 3.44794840494792 : JumpEnd); (8.79166666666667 : 3.44794840494792 : JumpStart); (8.95833333333333 : 3.44794840494792 : JumpEnd); (8.97916666666667 : 3.44794840494792 : JumpStart); (9.15628173828125 : 3.44794840494792 : JumpEnd); (12.25 : 3.44794840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.65625 : 7.75); (5.65625 : 3.44794840494792); (12.25 : 3.44794840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataContext_mastercafe/member/member_employee_member" />
       <nodes>
         <classShapeMoniker Id="92ddaa4b-d6f6-4140-bf9f-89ed3bbd4189" />
         <classShapeMoniker Id="6e7c6739-33b3-4e7c-a9db-ca3569467204" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.5 : 5.41429768880208); (9.25 : 5.41429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.5 : 5.41429768880208); (9.25 : 5.41429768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataContext_mastercafe/client/client_reserve" />
       <nodes>
         <classShapeMoniker Id="f4a9d6ec-d0a5-430c-aa42-128ad6e51b35" />
         <classShapeMoniker Id="ea244458-ad47-449b-abb3-b7f8769f3436" />
       </nodes>
     </associationConnector>
+    <classShape Id="46a7b513-436e-4604-a61f-b7bdd4be21a9" absoluteBounds="12.5, 12.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DataContext_mastercafe/iptable" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7bf6ecf1-49dd-4836-9d1a-3648f4654c4b" absoluteBounds="12.515, 12.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

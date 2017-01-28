@@ -43,6 +43,7 @@ namespace Server
         private Hashtable monitors_packets = new Hashtable();
         public static config cfg = new config();
         public static gconfig gcfg = new gconfig();
+        public static int testc = 0;
 
         public Serverfrm()
         {
@@ -290,6 +291,15 @@ namespace Server
             InitializeComponent();
             status();
             Task.Factory.StartNew(() => client_listen1());
+            Task.Factory.StartNew(() => client_listen2());
+            Task.Factory.StartNew(() => client_listen3());
+            Task.Factory.StartNew(() => client_listen4());
+            Task.Factory.StartNew(() => client_listen5());
+            Task.Factory.StartNew(() => client_listen6());
+            Task.Factory.StartNew(() => client_listen7());
+            Task.Factory.StartNew(() => client_listen8());
+            Task.Factory.StartNew(() => client_listen9());
+            Task.Factory.StartNew(() => client_listen10());
             Task.Factory.StartNew(() => monitor_listen());
             broadcast_timer = new System.Timers.Timer(1000);
             broadcast_timer.Elapsed +=new ElapsedEventHandler(broadcast_timerealpsed);
@@ -559,7 +569,16 @@ namespace Server
         {
             using (DataContext_mastercafe dcm = new DataContext_mastercafe(Program.constr))
             {
+                
                 PacketServerClientInit packetinit = new PacketServerClientInit();
+                packetinit.portid = 1;
+                foreach (iptable it in dcm.iptables)
+                {
+                    if (iprange(it.ipbeg, it.ipend, ip))
+                    {
+                        packetinit.portid = it.id;
+                    }
+                }
                 packetinit.clientpassword = dcm.employees.Where(e => e.isadmin == true).FirstOrDefault().password;
                 packetinit.clientuser = dcm.employees.Where(e => e.isadmin == true).FirstOrDefault().name;
                 packetinit.group = new clientgroup();
@@ -757,6 +776,14 @@ namespace Server
             }
         }
 
+        public static bool iprange(string startIpAddr, string endIpAddr, string address)
+        {
+            long ipStart = BitConverter.ToInt32(IPAddress.Parse(startIpAddr).GetAddressBytes().Reverse().ToArray(), 0);
+            long ipEnd = BitConverter.ToInt32(IPAddress.Parse(endIpAddr).GetAddressBytes().Reverse().ToArray(), 0);
+            long ip = BitConverter.ToInt32(IPAddress.Parse(address).GetAddressBytes().Reverse().ToArray(), 0);
+            return ip >= ipStart && ip <= ipEnd;
+        }
+
         private void client_management(string ip, string data)
         {
             if (data.Length == 0)
@@ -774,7 +801,7 @@ namespace Server
                 case "memberlogout": client_memberlogout(ip); break;
                 case "timecodelogin": client_timecodelogin(Newtonsoft.Json.JsonConvert.DeserializeObject<PacketClientServerTimecodeLogin>(data),ip); break;
                 case "timecodelogout": client_timecodelogout(ip); break;
-
+                case "test": testc++; status(); break;
                 default: break;
             }
         }
@@ -935,6 +962,213 @@ namespace Server
             //client_udp.Close();
         }
 
+        private void client_listen2()
+        {
+            UdpClient client_udp = new UdpClient(Program.port_clienttoserver2);
+            IPEndPoint ipep = new IPEndPoint(IPAddress.Any, Program.port_clienttoserver2);
+            while (true)
+            {
+                try
+                {
+                    byte[] allmessage = client_udp.Receive(ref ipep);
+                    recivedbytes += allmessage.Length;
+                    string[] param = new string[2];
+                    param[0] = ipep.ToString();
+                    param[1] = System.Text.Encoding.UTF8.GetString(allmessage);
+                    Task.Factory.StartNew(() => client_collect(param));
+                }
+                catch (Exception ex)
+                {
+                    Program.log.Error(ex);
+                }
+            }
+            //client_udp.Close();
+        }
+
+        private void client_listen3()
+        {
+            UdpClient client_udp = new UdpClient(Program.port_clienttoserver3);
+            IPEndPoint ipep = new IPEndPoint(IPAddress.Any, Program.port_clienttoserver3);
+            while (true)
+            {
+                try
+                {
+                    byte[] allmessage = client_udp.Receive(ref ipep);
+                    recivedbytes += allmessage.Length;
+                    string[] param = new string[2];
+                    param[0] = ipep.ToString();
+                    param[1] = System.Text.Encoding.UTF8.GetString(allmessage);
+                    Task.Factory.StartNew(() => client_collect(param));
+                }
+                catch (Exception ex)
+                {
+                    Program.log.Error(ex);
+                }
+            }
+            //client_udp.Close();
+        }
+
+        private void client_listen4()
+        {
+            UdpClient client_udp = new UdpClient(Program.port_clienttoserver4);
+            IPEndPoint ipep = new IPEndPoint(IPAddress.Any, Program.port_clienttoserver4);
+            while (true)
+            {
+                try
+                {
+                    byte[] allmessage = client_udp.Receive(ref ipep);
+                    recivedbytes += allmessage.Length;
+                    string[] param = new string[2];
+                    param[0] = ipep.ToString();
+                    param[1] = System.Text.Encoding.UTF8.GetString(allmessage);
+                    Task.Factory.StartNew(() => client_collect(param));
+                }
+                catch (Exception ex)
+                {
+                    Program.log.Error(ex);
+                }
+            }
+            //client_udp.Close();
+        }
+
+        private void client_listen5()
+        {
+            UdpClient client_udp = new UdpClient(Program.port_clienttoserver5);
+            IPEndPoint ipep = new IPEndPoint(IPAddress.Any, Program.port_clienttoserver5);
+            while (true)
+            {
+                try
+                {
+                    byte[] allmessage = client_udp.Receive(ref ipep);
+                    recivedbytes += allmessage.Length;
+                    string[] param = new string[2];
+                    param[0] = ipep.ToString();
+                    param[1] = System.Text.Encoding.UTF8.GetString(allmessage);
+                    Task.Factory.StartNew(() => client_collect(param));
+                }
+                catch (Exception ex)
+                {
+                    Program.log.Error(ex);
+                }
+            }
+            //client_udp.Close();
+        }
+
+        private void client_listen6()
+        {
+            UdpClient client_udp = new UdpClient(Program.port_clienttoserver6);
+            IPEndPoint ipep = new IPEndPoint(IPAddress.Any, Program.port_clienttoserver6);
+            while (true)
+            {
+                try
+                {
+                    byte[] allmessage = client_udp.Receive(ref ipep);
+                    recivedbytes += allmessage.Length;
+                    string[] param = new string[2];
+                    param[0] = ipep.ToString();
+                    param[1] = System.Text.Encoding.UTF8.GetString(allmessage);
+                    Task.Factory.StartNew(() => client_collect(param));
+                }
+                catch (Exception ex)
+                {
+                    Program.log.Error(ex);
+                }
+            }
+            //client_udp.Close();
+        }
+
+        private void client_listen7()
+        {
+            UdpClient client_udp = new UdpClient(Program.port_clienttoserver7);
+            IPEndPoint ipep = new IPEndPoint(IPAddress.Any, Program.port_clienttoserver7);
+            while (true)
+            {
+                try
+                {
+                    byte[] allmessage = client_udp.Receive(ref ipep);
+                    recivedbytes += allmessage.Length;
+                    string[] param = new string[2];
+                    param[0] = ipep.ToString();
+                    param[1] = System.Text.Encoding.UTF8.GetString(allmessage);
+                    Task.Factory.StartNew(() => client_collect(param));
+                }
+                catch (Exception ex)
+                {
+                    Program.log.Error(ex);
+                }
+            }
+            //client_udp.Close();
+        }
+
+        private void client_listen8()
+        {
+            UdpClient client_udp = new UdpClient(Program.port_clienttoserver8);
+            IPEndPoint ipep = new IPEndPoint(IPAddress.Any, Program.port_clienttoserver8);
+            while (true)
+            {
+                try
+                {
+                    byte[] allmessage = client_udp.Receive(ref ipep);
+                    recivedbytes += allmessage.Length;
+                    string[] param = new string[2];
+                    param[0] = ipep.ToString();
+                    param[1] = System.Text.Encoding.UTF8.GetString(allmessage);
+                    Task.Factory.StartNew(() => client_collect(param));
+                }
+                catch (Exception ex)
+                {
+                    Program.log.Error(ex);
+                }
+            }
+            //client_udp.Close();
+        }
+
+        private void client_listen9()
+        {
+            UdpClient client_udp = new UdpClient(Program.port_clienttoserver9);
+            IPEndPoint ipep = new IPEndPoint(IPAddress.Any, Program.port_clienttoserver9);
+            while (true)
+            {
+                try
+                {
+                    byte[] allmessage = client_udp.Receive(ref ipep);
+                    recivedbytes += allmessage.Length;
+                    string[] param = new string[2];
+                    param[0] = ipep.ToString();
+                    param[1] = System.Text.Encoding.UTF8.GetString(allmessage);
+                    Task.Factory.StartNew(() => client_collect(param));
+                }
+                catch (Exception ex)
+                {
+                    Program.log.Error(ex);
+                }
+            }
+            //client_udp.Close();
+        }
+
+        private void client_listen10()
+        {
+            UdpClient client_udp = new UdpClient(Program.port_clienttoserver10);
+            IPEndPoint ipep = new IPEndPoint(IPAddress.Any, Program.port_clienttoserver10);
+            while (true)
+            {
+                try
+                {
+                    byte[] allmessage = client_udp.Receive(ref ipep);
+                    recivedbytes += allmessage.Length;
+                    string[] param = new string[2];
+                    param[0] = ipep.ToString();
+                    param[1] = System.Text.Encoding.UTF8.GetString(allmessage);
+                    Task.Factory.StartNew(() => client_collect(param));
+                }
+                catch (Exception ex)
+                {
+                    Program.log.Error(ex);
+                }
+            }
+            //client_udp.Close();
+        }
+
         private void broadcast_timerealpsed(object sender, ElapsedEventArgs e)
         {
             try
@@ -1021,12 +1255,12 @@ namespace Server
             {
                 userControl_monitor.label_status.Invoke(new MethodInvoker(delegate
                 {
-                    userControl_monitor.label_status.Text = "Клиент (" + clients.Count + ") Монитор (" + monitors.Count + ")";
+                    userControl_monitor.label_status.Text = testc+" Клиент (" + clients.Count + ") Монитор (" + monitors.Count + ")";
                 }));
             }
             else
             {
-                userControl_monitor.label_status.Text = "Клиент (" + clients.Count + ") Монитор (" + monitors.Count + ")";
+                userControl_monitor.label_status.Text = testc+" Клиент (" + clients.Count + ") Монитор (" + monitors.Count + ")";
             }
         }
 

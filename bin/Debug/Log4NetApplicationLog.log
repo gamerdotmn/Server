@@ -3036,3 +3036,339 @@ ClientConnectionId:12b6e6fe-68d4-4359-9e87-26f35558cc93
 2017-01-26 14:50:52,591 [10] INFO  Server.Program [(null)] - Ports are not using.
 2017-01-26 14:50:53,636 [10] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(0)
 2017-01-26 14:50:53,659 [10] INFO  Server.Program [(null)] - Config count, 1
+2017-01-27 14:15:16,162 [1] INFO  Server.Program [(null)] - Ports are not using.
+2017-01-27 14:15:36,709 [1] ERROR Server.Program [(null)] - System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Server.Serverfrm..ctor() in d:\MC\Server\Serverfrm.cs:line 79
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+2017-01-27 14:15:37,939 [1] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(1)
+2017-01-27 14:15:37,959 [1] ERROR Server.Program [(null)] - System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Server.Serverfrm..ctor() in d:\MC\Server\Serverfrm.cs:line 79
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+2017-01-27 14:15:38,959 [1] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(2)
+2017-01-27 14:15:38,959 [1] ERROR Server.Program [(null)] - System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Server.Serverfrm..ctor() in d:\MC\Server\Serverfrm.cs:line 79
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+2017-01-27 14:15:39,964 [1] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(3)
+2017-01-27 14:15:39,964 [1] ERROR Server.Program [(null)] - System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Server.Serverfrm..ctor() in d:\MC\Server\Serverfrm.cs:line 79
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+2017-01-27 14:15:40,978 [1] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(4)
+2017-01-27 14:15:40,978 [1] ERROR Server.Program [(null)] - System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Server.Serverfrm..ctor() in d:\MC\Server\Serverfrm.cs:line 79
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+2017-01-27 14:15:41,992 [1] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(5)
+2017-01-27 14:15:49,698 [1] ERROR Server.Program [(null)] - System.Data.SqlClient.SqlException (0x80131904): Cannot open database "mastercafedb" requested by the login. The login failed.
+Login failed for user 'sa'.
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at System.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   at System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Server.Serverfrm..ctor() in d:\MC\Server\Serverfrm.cs:line 79
+ClientConnectionId:6620ac3e-faef-4bf4-b4bb-6336c80694c3
+2017-01-27 14:15:50,712 [1] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(6)
+2017-01-27 14:15:50,712 [1] ERROR Server.Program [(null)] - System.Data.SqlClient.SqlException (0x80131904): Cannot open database "mastercafedb" requested by the login. The login failed.
+Login failed for user 'sa'.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Server.Serverfrm..ctor() in d:\MC\Server\Serverfrm.cs:line 79
+ClientConnectionId:6620ac3e-faef-4bf4-b4bb-6336c80694c3
+2017-01-27 14:15:51,726 [1] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(7)
+2017-01-27 14:15:51,726 [1] ERROR Server.Program [(null)] - System.Data.SqlClient.SqlException (0x80131904): Cannot open database "mastercafedb" requested by the login. The login failed.
+Login failed for user 'sa'.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Server.Serverfrm..ctor() in d:\MC\Server\Serverfrm.cs:line 79
+ClientConnectionId:6620ac3e-faef-4bf4-b4bb-6336c80694c3
+2017-01-27 14:15:52,740 [1] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(8)
+2017-01-27 14:15:52,740 [1] ERROR Server.Program [(null)] - System.Data.SqlClient.SqlException (0x80131904): Cannot open database "mastercafedb" requested by the login. The login failed.
+Login failed for user 'sa'.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Server.Serverfrm..ctor() in d:\MC\Server\Serverfrm.cs:line 79
+ClientConnectionId:6620ac3e-faef-4bf4-b4bb-6336c80694c3
+2017-01-27 14:15:53,754 [1] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(9)
+2017-01-27 14:15:53,754 [1] ERROR Server.Program [(null)] - System.Data.SqlClient.SqlException (0x80131904): Cannot open database "mastercafedb" requested by the login. The login failed.
+Login failed for user 'sa'.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Server.Serverfrm..ctor() in d:\MC\Server\Serverfrm.cs:line 79
+ClientConnectionId:6620ac3e-faef-4bf4-b4bb-6336c80694c3
+2017-01-27 14:15:54,768 [1] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(10)
+2017-01-27 14:15:54,768 [1] ERROR Server.Program [(null)] - System.Data.SqlClient.SqlException (0x80131904): Cannot open database "mastercafedb" requested by the login. The login failed.
+Login failed for user 'sa'.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Server.Serverfrm..ctor() in d:\MC\Server\Serverfrm.cs:line 79
+ClientConnectionId:6620ac3e-faef-4bf4-b4bb-6336c80694c3
+2017-01-27 14:15:55,782 [1] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(11)
+2017-01-27 14:15:55,782 [1] ERROR Server.Program [(null)] - System.Data.SqlClient.SqlException (0x80131904): Cannot open database "mastercafedb" requested by the login. The login failed.
+Login failed for user 'sa'.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Server.Serverfrm..ctor() in d:\MC\Server\Serverfrm.cs:line 79
+ClientConnectionId:6620ac3e-faef-4bf4-b4bb-6336c80694c3
+2017-01-27 14:15:56,796 [1] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(12)
+2017-01-27 14:15:56,796 [1] ERROR Server.Program [(null)] - System.Data.SqlClient.SqlException (0x80131904): Cannot open database "mastercafedb" requested by the login. The login failed.
+Login failed for user 'sa'.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Server.Serverfrm..ctor() in d:\MC\Server\Serverfrm.cs:line 79
+ClientConnectionId:6620ac3e-faef-4bf4-b4bb-6336c80694c3
+2017-01-27 14:15:57,810 [1] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(13)
+2017-01-27 14:15:57,810 [1] ERROR Server.Program [(null)] - System.Data.SqlClient.SqlException (0x80131904): Cannot open database "mastercafedb" requested by the login. The login failed.
+Login failed for user 'sa'.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Server.Serverfrm..ctor() in d:\MC\Server\Serverfrm.cs:line 79
+ClientConnectionId:6620ac3e-faef-4bf4-b4bb-6336c80694c3
+2017-01-27 14:15:58,810 [1] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(14)
+2017-01-27 14:15:58,810 [1] ERROR Server.Program [(null)] - System.Data.SqlClient.SqlException (0x80131904): Cannot open database "mastercafedb" requested by the login. The login failed.
+Login failed for user 'sa'.
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Server.Serverfrm..ctor() in d:\MC\Server\Serverfrm.cs:line 79
+ClientConnectionId:6620ac3e-faef-4bf4-b4bb-6336c80694c3
+2017-01-27 14:15:59,811 [1] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(15)
+2017-01-27 14:16:03,864 [1] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(15)
+2017-01-27 14:16:09,488 [1] INFO  Server.Program [(null)] - Config count, 1
+2017-01-27 14:16:39,918 [14] ERROR Server.Program [(null)] - System.Net.WebException: An exception occurred during a WebClient request. ---> System.UnauthorizedAccessException: Access to the path 'C:\Windows\system32\0' is denied.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access)
+   at System.Net.WebClient.DownloadFile(Uri address, String fileName)
+   --- End of inner exception stack trace ---
+   at System.Net.WebClient.DownloadFile(Uri address, String fileName)
+   at System.Net.WebClient.DownloadFile(String address, String fileName)
+   at Server.Serverfrm.speedtest() in d:\MC\Server\Serverfrm.cs:line 1154
+2017-01-27 14:19:32,601 [13] ERROR Server.Program [(null)] - System.Net.WebException: An exception occurred during a WebClient request. ---> System.UnauthorizedAccessException: Access to the path 'C:\Windows\system32\0' is denied.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access)
+   at System.Net.WebClient.DownloadFile(Uri address, String fileName)
+   --- End of inner exception stack trace ---
+   at System.Net.WebClient.DownloadFile(Uri address, String fileName)
+   at System.Net.WebClient.DownloadFile(String address, String fileName)
+   at Server.Serverfrm.speedtest() in d:\MC\Server\Serverfrm.cs:line 1154
+2017-01-27 14:22:32,605 [14] ERROR Server.Program [(null)] - System.Net.WebException: An exception occurred during a WebClient request. ---> System.UnauthorizedAccessException: Access to the path 'C:\Windows\system32\0' is denied.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access)
+   at System.Net.WebClient.DownloadFile(Uri address, String fileName)
+   --- End of inner exception stack trace ---
+   at System.Net.WebClient.DownloadFile(Uri address, String fileName)
+   at System.Net.WebClient.DownloadFile(String address, String fileName)
+   at Server.Serverfrm.speedtest() in d:\MC\Server\Serverfrm.cs:line 1154
+2017-01-27 14:25:32,602 [14] ERROR Server.Program [(null)] - System.Net.WebException: An exception occurred during a WebClient request. ---> System.UnauthorizedAccessException: Access to the path 'C:\Windows\system32\0' is denied.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access)
+   at System.Net.WebClient.DownloadFile(Uri address, String fileName)
+   --- End of inner exception stack trace ---
+   at System.Net.WebClient.DownloadFile(Uri address, String fileName)
+   at System.Net.WebClient.DownloadFile(String address, String fileName)
+   at Server.Serverfrm.speedtest() in d:\MC\Server\Serverfrm.cs:line 1154
+2017-01-27 14:28:32,617 [9] ERROR Server.Program [(null)] - System.Net.WebException: An exception occurred during a WebClient request. ---> System.UnauthorizedAccessException: Access to the path 'C:\Windows\system32\0' is denied.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access)
+   at System.Net.WebClient.DownloadFile(Uri address, String fileName)
+   --- End of inner exception stack trace ---
+   at System.Net.WebClient.DownloadFile(Uri address, String fileName)
+   at System.Net.WebClient.DownloadFile(String address, String fileName)
+   at Server.Serverfrm.speedtest() in d:\MC\Server\Serverfrm.cs:line 1154
+2017-01-27 14:31:32,622 [14] ERROR Server.Program [(null)] - System.Net.WebException: An exception occurred during a WebClient request. ---> System.UnauthorizedAccessException: Access to the path 'C:\Windows\system32\0' is denied.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access)
+   at System.Net.WebClient.DownloadFile(Uri address, String fileName)
+   --- End of inner exception stack trace ---
+   at System.Net.WebClient.DownloadFile(Uri address, String fileName)
+   at System.Net.WebClient.DownloadFile(String address, String fileName)
+   at Server.Serverfrm.speedtest() in d:\MC\Server\Serverfrm.cs:line 1154
+2017-01-27 14:34:32,636 [8] ERROR Server.Program [(null)] - System.Net.WebException: An exception occurred during a WebClient request. ---> System.UnauthorizedAccessException: Access to the path 'C:\Windows\system32\0' is denied.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access)
+   at System.Net.WebClient.DownloadFile(Uri address, String fileName)
+   --- End of inner exception stack trace ---
+   at System.Net.WebClient.DownloadFile(Uri address, String fileName)
+   at System.Net.WebClient.DownloadFile(String address, String fileName)
+   at Server.Serverfrm.speedtest() in d:\MC\Server\Serverfrm.cs:line 1154
+2017-01-27 14:37:33,245 [14] ERROR Server.Program [(null)] - System.Net.WebException: An exception occurred during a WebClient request. ---> System.UnauthorizedAccessException: Access to the path 'C:\Windows\system32\0' is denied.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access)
+   at System.Net.WebClient.DownloadFile(Uri address, String fileName)
+   --- End of inner exception stack trace ---
+   at System.Net.WebClient.DownloadFile(Uri address, String fileName)
+   at System.Net.WebClient.DownloadFile(String address, String fileName)
+   at Server.Serverfrm.speedtest() in d:\MC\Server\Serverfrm.cs:line 1154
+2017-01-27 14:40:32,657 [14] ERROR Server.Program [(null)] - System.Net.WebException: An exception occurred during a WebClient request. ---> System.UnauthorizedAccessException: Access to the path 'C:\Windows\system32\0' is denied.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access)
+   at System.Net.WebClient.DownloadFile(Uri address, String fileName)
+   --- End of inner exception stack trace ---
+   at System.Net.WebClient.DownloadFile(Uri address, String fileName)
+   at System.Net.WebClient.DownloadFile(String address, String fileName)
+   at Server.Serverfrm.speedtest() in d:\MC\Server\Serverfrm.cs:line 1154
+2017-01-27 14:43:32,665 [12] ERROR Server.Program [(null)] - System.Net.WebException: An exception occurred during a WebClient request. ---> System.UnauthorizedAccessException: Access to the path 'C:\Windows\system32\0' is denied.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access)
+   at System.Net.WebClient.DownloadFile(Uri address, String fileName)
+   --- End of inner exception stack trace ---
+   at System.Net.WebClient.DownloadFile(Uri address, String fileName)
+   at System.Net.WebClient.DownloadFile(String address, String fileName)
+   at Server.Serverfrm.speedtest() in d:\MC\Server\Serverfrm.cs:line 1154
+2017-01-27 14:46:32,683 [15] ERROR Server.Program [(null)] - System.Net.WebException: An exception occurred during a WebClient request. ---> System.UnauthorizedAccessException: Access to the path 'C:\Windows\system32\0' is denied.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access)
+   at System.Net.WebClient.DownloadFile(Uri address, String fileName)
+   --- End of inner exception stack trace ---
+   at System.Net.WebClient.DownloadFile(Uri address, String fileName)
+   at System.Net.WebClient.DownloadFile(String address, String fileName)
+   at Server.Serverfrm.speedtest() in d:\MC\Server\Serverfrm.cs:line 1154
+2017-01-27 14:49:32,680 [8] ERROR Server.Program [(null)] - System.Net.WebException: An exception occurred during a WebClient request. ---> System.UnauthorizedAccessException: Access to the path 'C:\Windows\system32\0' is denied.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access)
+   at System.Net.WebClient.DownloadFile(Uri address, String fileName)
+   --- End of inner exception stack trace ---
+   at System.Net.WebClient.DownloadFile(Uri address, String fileName)
+   at System.Net.WebClient.DownloadFile(String address, String fileName)
+   at Server.Serverfrm.speedtest() in d:\MC\Server\Serverfrm.cs:line 1154
+2017-01-27 14:52:32,689 [13] ERROR Server.Program [(null)] - System.Net.WebException: An exception occurred during a WebClient request. ---> System.UnauthorizedAccessException: Access to the path 'C:\Windows\system32\0' is denied.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access)
+   at System.Net.WebClient.DownloadFile(Uri address, String fileName)
+   --- End of inner exception stack trace ---
+   at System.Net.WebClient.DownloadFile(Uri address, String fileName)
+   at System.Net.WebClient.DownloadFile(String address, String fileName)
+   at Server.Serverfrm.speedtest() in d:\MC\Server\Serverfrm.cs:line 1154
+2017-01-27 15:31:41,214 [8] INFO  Server.Program [(null)] - Ports are not using.
+2017-01-27 15:31:42,260 [8] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(0)
+2017-01-27 15:31:42,375 [8] INFO  Server.Program [(null)] - Config count, 1
+2017-01-27 15:31:47,518 [16] INFO  Server.Program [(null)] - 192.168.1.11, monitor connect.
+2017-01-27 15:32:24,184 [11] INFO  Server.Program [(null)] - 192.168.1.11, monitor disconnect.
+2017-01-27 16:45:23,496 [8] INFO  Server.Program [(null)] - Ports are not using.
+2017-01-27 16:45:24,627 [8] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(0)
+2017-01-27 16:45:24,683 [8] INFO  Server.Program [(null)] - Config count, 1
+2017-01-27 16:55:22,147 [34] INFO  Server.Program [(null)] - 192.168.1.155,  connect.
+2017-01-27 16:55:23,179 [34] INFO  Server.Program [(null)] - 192.168.1.155 , init.
+2017-01-27 16:55:58,240 [14] INFO  Server.Program [(null)] - 192.168.1.155 , init.
+2017-01-27 17:00:40,746 [10] INFO  Server.Program [(null)] - Ports are not using.
+2017-01-27 17:00:41,801 [10] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(0)
+2017-01-27 17:00:41,825 [10] INFO  Server.Program [(null)] - Config count, 1
+2017-01-27 17:00:47,252 [27] INFO  Server.Program [(null)] - 192.168.1.155,  connect.
+2017-01-27 17:00:48,295 [27] INFO  Server.Program [(null)] - 192.168.1.155 , init.
+2017-01-27 17:03:10,069 [8] INFO  Server.Program [(null)] - Ports are not using.
+2017-01-27 17:03:11,116 [8] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(0)
+2017-01-27 17:03:11,146 [8] INFO  Server.Program [(null)] - Config count, 1
+2017-01-27 17:03:19,742 [27] INFO  Server.Program [(null)] - 192.168.1.155,  connect.
+2017-01-27 17:03:20,774 [27] INFO  Server.Program [(null)] - 192.168.1.155 , init.
+2017-01-27 17:04:35,448 [8] INFO  Server.Program [(null)] - Backup database complete. D:\MC\Docs\mastercafedb.db
+2017-01-27 17:06:10,009 [31] INFO  Server.Program [(null)] - 192.168.1.155 ,disconnect
+2017-01-27 18:22:30,179 [7] INFO  Server.Program [(null)] - Ports are not using.
+2017-01-27 18:22:31,240 [7] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(0)
+2017-01-27 18:22:31,270 [7] INFO  Server.Program [(null)] - Config count, 1
+2017-01-27 18:25:56,815 [8] INFO  Server.Program [(null)] - Ports are not using.
+2017-01-27 18:25:57,868 [8] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(0)
+2017-01-27 18:25:57,895 [8] INFO  Server.Program [(null)] - Config count, 1
+2017-01-27 18:29:02,917 [10] INFO  Server.Program [(null)] - Ports are not using.
+2017-01-27 18:29:03,967 [10] INFO  Server.Program [(null)] - Try connecting to SQL. Sec(0)
+2017-01-27 18:29:03,993 [10] INFO  Server.Program [(null)] - Config count, 1
